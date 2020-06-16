@@ -1,0 +1,182 @@
+---
+title: 'A One-Sided Test of Maternal-Infant Well-being: the Infant Sex Ratio'
+author: "Jesse McDevitt-Irwin and James Irwin"
+output: 
+  html_document:
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+bibliography: ["/home/friend/bibtex/references.bib"]
+biblio-style: "apalike"
+nocite: | 
+ [@catalanoSexRatiosCalifornia2005] [@catalanoSexRatiosTwo2003] [@catalanoExogenousShocksHuman2006] [@catalanoAmbientTemperaturePredicts2008] [@steckelHealthMortalityWomen1988]
+--- 
+
+```{r, include = FALSE}
+knitr::opts_chunk$set( echo = FALSE,results=TRUE,cache=TRUE, message = FALSE, warning = FALSE, fig.cap = " ")
+library(tidyverse)
+```
+
+#
+
+
+#### **Summary: the infant sex-ratio, often available when other health indicators are not, provides a one-sided test of maternal-infant well-being.** 
+
+# Outline
+
+The infant sex ratio (SR1) is the ratio of males to females among the infants (from 0 to 1 year of age) of a population. The SR1 is between 1.05 and 1.06 under good conditions of life [@jamesProximateCausesVariation2015], but is decreasing in fetal and infant mortality. Fetal and infant mortality data can be difficult to obtain, especially from historical sources. The SR1, on the other hand, can be easily calculated from almost any census, making it a useful indicator of maternal-infant misery in times and places where we lack vital statistics and other direct measures of health. 
+
+However, sex-discrimination against girls precludes simple comparisons of maternal well-being across countries using SR1. Much of the literature on the SR1 to date has focused on abnormally *high* sex-ratios,[^1] which is a critical indicator of sex-selective abortion, female infanticide and other forms of sex-discrimination. For example, the SR1 is much higher in India than in Sub-Saharan Africa. This is due to some combination of differences in maternal well-being and sex-discrimination, between which the SR1 alone cannot be used to distinguish.  
+
+A low SR1, on the other hand, implies maternal-infant misery. Girls are discriminated against, meaning that if we observe more girls than expected, it is due to a culling effect, which disproportionately affects male fetuses and infants. There has been extensive work documenting the negative effect of maternal stress on the sex-ratio at birth,[^2] and this culling of males continues into infancy [@drevenstedtRiseFallExcess2008;@alkemaNationalRegionalGlobal2014]. I am simply applying these result in the converse, with the added assumption that sex-discrimination is male-biased across societies.
+
+The SR1, thus, provides a **severe, one-sided test** of maternal-infant conditions: hence the reference to maternal-infant *misery*, rather than *well-being*. Building off of previous work in this area,[^3] we can apply the implications of a low SR1 more broadly. Next, we examine the relationship between SR1 and infant mortality in populations where we have both statistics; then, we apply the SR1 lens to two historical populations where there is a census but no birth registry, meaning the SR1 provides novel information on maternal-infant misery.
+
+
+# Worldwide Variation in SR1: 1950-2018
+
+A glance at modern data, where we have both infant mortality and the SR1, points to the potential for low SR1 to serve as an indicator for fetal-infant mortality. For figures 1 and 2, we take country-year data from the UN and plot infant mortality by SR1. Below 1.055, the natural sex-ratio at birth, SR1 and infant mortality exhibit a near-linear, negative relationship. For SR1's above this threshold, the relationship is driven by sex-discrimination, and follow no clear path. We plot the 1990-2018 and 1950-1975 periods separately in order to show that the relationship to the left of 1.055 is stable across the introduction of ultra-sound, which facilitated sex-selective abortion, while the relationship to the right changes.
+
+```{r}
+sex_ratio_at_1 <- read_csv("~/Research/sex ratio/DataRaw/UN_fem_0.csv") 
+colnames(sex_ratio_at_1)<- c("Region","Code","Type","Pcode","Year","pop_fem_1")                
+                           
+sr1 <-sex_ratio_at_1 %>%                            
+  merge(read_csv("~/Research/sex ratio/DataRaw/UN_male_0.csv",
+                 col_names = c("Region","Code","Type","Pcode","Year","pop_male_1")), 
+        by = c("Region","Code","Type","Pcode","Year")) %>% 
+  transmute(Code= Code,
+            Country = Region,
+            Year = Year,
+            pop = as.numeric(pop_male_1)+as.numeric(pop_fem_1),
+            sr1 = as.numeric(pop_male_1)/as.numeric(pop_fem_1)) %>% 
+  filter(!is.na(sr1)&sr1<Inf) %>% 
+  filter(sr1!=1)
+rm(sex_ratio_at_1)
+
+ ##mortality data
+mort_raw <- read_csv("~/Research/sex ratio/DataRaw/UN_mort.csv")
+mort <- mort_raw %>% 
+  gather(key,value,-c("Code","Country","Bound"))%>% 
+  separate(key,c("sex","Year"),1) %>% 
+  filter(Bound=="Median") %>% 
+  select(-c(Bound,Code)) %>% 
+  pivot_wider(names_from =sex, values_from=value )
+rm(mort_raw)
+mort$Year <- as.numeric(mort$Year)
+data_1 <- mort %>% 
+  full_join(sr1,
+        by= c("Country","Year")) %>% 
+  mutate(mort = (m*sr1+f)/2)
+
+## COuntry and cc 
+countrycodes <- read_csv("~/Research/sex ratio/DataRaw/region_codes.csv") %>% 
+  select(c(Country = name,CC = region,region="sub-region")) %>% 
+  mutate(MENA = region%in%c("Western Asia","Northern Africa"),
+         region = if_else(MENA,
+                          "Middle-East and North Africa",
+                          region)) %>% 
+  select(-MENA)
+
+data <- data_1 %>% 
+  inner_join(countrycodes, by= "Country")
+```
+
+```{r,fig.height = 6, fig.width = 10, fig.cap = "Figure 1: Infant mortality by SR1 (sex ratio of infants) by country-year, post-1990. The black line is a LOESS estimate of the conditional mean (weighted by country-year population), and the gray shading represents the 95% CI."}
+ggplot(data,aes(x=sr1,y=mort))+geom_point(aes(color =CC ))+geom_smooth(aes(weight =  pop),color="black")+ xlim(.975,1.1)+geom_vline(xintercept=1.055)+
+labs(x= "SR1",y = "Infant Mortality (1000)",title = "Infant Mortality by SR1: 1990-2018")+scale_color_brewer(palette="Set1")
+```
+
+```{r}
+## Try to get longer-term mortality data
+mort_long_UN <- read_csv("~/Research/sex ratio/DataRaw/mort_long_UN.csv")
+
+long <- mort_long_UN %>% 
+  pivot_longer(8:15,names_to = "Year",values_to = "mort") %>% 
+  mutate(mort = as.numeric(mort)) %>% 
+  select(Country = `Region, subregion, country or area *`,Year,mort) %>% 
+  mutate(Year=as.numeric(Year)) %>% 
+  inner_join(sr1,c("Year","Country")) %>% 
+  inner_join(countrycodes,"Country")
+
+```
+
+```{r,fig.height = 6, fig.width = 10, fig.cap = "Figure 2:Infant mortality by SR1 (sex ratio of infants) by country-year, pre-1990. The black line is a LOESS estimate of the conditional mean (weighted by country-year population), and the gray shading represents the 95% CI."}
+
+filter(long,Year<1975) %>% 
+ggplot(aes(x=sr1,y=mort))+geom_point(aes(color =CC))+geom_smooth(aes(weight = pop),color="black")+ xlim(.975,1.10)+geom_vline(xintercept=1.055)+
+labs(x= "SR1",y = "Infant Mortality (1000)",title = "Infant Mortality by SR1: 1950-1975")+scale_color_brewer(palette="Set1")
+```
+
+# Applications
+
+## Europe and India, 1880-1891
+
+In the pre-1950 period, there is little large-scale data on infant mortality. The SR1, on the other hand, can be calculated from nearly any census. Here we focus on the British 1891 census of India relative to contemporary European censuses.
+
+```{r}
+x<- c( "India","Bengal","Madras","Bombay","Sindh","Punjab","England and Wales","Scotland","Ireland","Italy","Sweden","Austria") %>%
+  cbind(c(1020,1055,1048,1016,932,971,998,962,952,956,975,1001)) %>% 
+  cbind(c(936,951,990,942,815,845,1006,976,977,966,978,1004))%>%
+ matrix(ncol=3) %>% data.frame(stringsAsFactors = F)
+colnames(x) <- c("Region","SR1","SR5-9")
+x$`SR5-9`<- 1000/as.numeric(x$`SR5-9`)
+x$SR1 <- 1000/as.numeric(x$SR1)
+
+x %>%
+knitr::kable(digits = 3, caption = "Table 1: The sex ratio of infants aged 0-1, and of children aged 5-9, across regions of India and countries in Europe. The Indian data comes from the 1891 British census of India, while the European data comes from censuses in 1880-1881. Note that the sex-ratios in India are relatively low for infants, but high for children, suggesting sex-discrimination combined with poor maternal well-being.")
+```
+
+We see that in India there is a general pattern of more girls than boys at age 1, while in contemporary Europe there are more boys than girls. Indian SR1's are, for the most part, abnormally low, indicating high rates of infant and fetal death, in concordance with our current understanding of comparative living standards during the 19th century. 
+
+Notice, however, that two regions of India, Sindh (modern day Pakistan) and the neighboring Punjab, exhibit relatively high sex-ratios. Here we see the one-sidedness of the SR1 test, as we are unable to tell whether these are regions with low mortality or high sex-discrimination.
+
+In order to distinguish between the two, we can look at the sex-ratio of children aged five to nine (SR5-9). We see that across India $SR5_-9 > SR1$, which is surprising given that girls ought to be more resilient during childhood, and have lower mortality. In the European countries, $SR5_-9 < SR1$, following the expected, biological pattern. This difference suggests (as in line with existing research) that sex-discrimination was larger in 19th century India than Europe, and that the relatively high SR1's of Sindh and Punjab are more likely due to female infanticide, rather than good maternal conditions.
+
+## American Slaves on the Eve of the Civil War
+
+Population growth, agricultural productivity and slave heights are suggestive of reasonable material conditions among American slaves in the antebellum South [@fogelTimeCrossEconomics1974; @margoHeightsAmericanSlaves1982]. However, evidence on the heights of slave children has been used to argue that maternal-infant conditions were miserable [@steckelPeculiarPopulationNutrition1986]. We can test this hypothesis using the sex-ratio of infants.
+
+The table below presents the infant sex ratio (SR1) for the slave and white populations, exclusive of those in non-slave areas.[^4]  
+<hr>
+<b>\       \  Infant Sex Ratios in the Slave South</b>[^5]
+
++-------+------+------+
+|       |Slaves|Whites|
++:=====:+:====:+:====:+
+|SR1    |0.937 | 1.050|
++-------+------+------+
+|Infants|85,705|74,444|
++-------+------+------+
+
+
+Our tabulation offers striking support for the proposition that American slaves suffered from extremely high fetal and infant mortality. While the white infants' SR1 of 1.050 was consistent with that of a healthy population, the slave infants' SR1 was remarkably low -- just 0.937. Based on the SR1, southern slaves may have had among the worst prenatal and infant experiences of any substantial population that experienced natural increase.[^6]
+
+# Conclusion
+
+The SR1 is widely available from historical censuses. Given *a-priori* knowledge on the direction and magnitude of sex-discrimination, the SR1 can provide a one-sided test of infant-maternal well-being. Previous studies have used the sex-ratio at birth as a measure of maternal-fetal health, but such data requires a birth registry. The SR1 is available for a range of historical and marginalized groups, for whom we have no birth registry. Some examples of such populations where the SR1 could provide important insight into living standards include:
+
+* Itinerant peoples (e.g. the Roma of Europe and Travelers of Ireland), where census data is likely available from the late 19th century onwards;
+* Nomadic peoples (e.g. Central Asian Steppes);
+* Indigenous peoples of the Americas and Australia, census data from the 19th century onwards;
+* The population of the Soviet Union, where more familiar measures of well-being are generally considered suspect;
+* Stateless peoples (e.g. Palestinians);
+* Peoples in Apartheid states (e.g. Black South Africans);
+* Marginalized minorities (e.g. Kurds of the Middle East);
+* Slave populations of the Americas; and,
+* Colonized peoples.
+
+The vast majority of human history is made up of people without a birth registry, but many of these *are* recorded in censuses. With the SR1 in hand, a simple count of population-by-sex-by-age, combined with an understanding of sex-inequality, may become an informative measure of living standards.
+
+
+# References
+
+[^1]: I will not go into detail here on this vast literature. 
+
+[^2]: For a subset, see Catalano et al. (2003,2005,2006, and 2008) and [@zornDeclineSexRatio2002].
+
+[^3]: See @almondTriversWillardBirth2007; [@sandersWhereHaveAll2015]
+
+[^4]: To reduce the possibility of confounding geographic factors (maybe slave-intensive regions were unhealthy), we restrict attention to the slave South, defined here as counties where the share of slaves in total population was above the average for the South as whole. This included about 3/4 of the slaves and 1/3 of the whites of the 15 states with slavery in 1860
+
+[^5]: Source: 1860 US Census, county-level data from ICPSR (00003)
+
+[^6]: From 1810 to 1860, the southern slave population grew over 3% annually ([Historical Statistics of the US](http://www2.census.gov/library/publications/1975/compendia/hist_stats_colonial-1970/hist_stats_colonial-1970p1-chA.pdf?#)); slave imports were negligible ([slavevoyages.org](https://www.slavevoyages.org/assessment/estimates)). The slave SR1 value is the lowest we have encountered so far, early in our exploration of the SR1 as a measure of maternal misery. Interestingly, the SR1 value was a somewhat better 0.976 for the one-third of the slave population spread out across the non-slave South (improved, but still suggestive of very poor living conditions)
