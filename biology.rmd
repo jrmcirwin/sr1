@@ -1,0 +1,36 @@
+---
+title: "Biology and Demography of the SR1"
+author: "Jim Irwin and Jesse McDevitt-Irwin"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+bibliography: ["/home/friend/Research/Bib/bib.bib"]
+biblio-style: "apalike"
+nocite: | 
+ [@valenteCivilConflictGenderspecific2015] [@klasenMissingWomenReconsidered1994] [@klasenTurningPointGender2002] [@coaleRegionalModelLife2013] [@halliej.kintnerChapter13Life2004]
+---
+
+# Biology
+
+The sex-ratio of infants age less than one, henceforth the SR1, can be modeled as a function of two demographic parameters: (1) the sex-ratio at birth (SRB), and (2) the mortality rates of male and female infants. The parameters, are, in turn, the function of biological and social determinants. In particular, poor maternal conditions reduce the SRB, while high infant mortality drives a greater wedge between the SR1 and SRB.
+
+In a healthy population without sex-selective abortion, the SRB should be between 105-106 males per 100 females [@orzackHumanSexRatio2015]. However, the realized SRB varies with maternal conditions. Stress, malnutrition and pollutant exposure can all cause the sex-ratio at birth to decrease.[^1] This effect is not due to any change in the sex-ratio at conception. Instead, male fetuses are more likely to miscarriage, and miscarriage is more likely under stress and malnutrition. Stress hormones are thought to play a leading role in stimulating spontaneous miscarriage [@jamesReviewEstablishedSuspected2017], meaning that the SRB, unlike physiological measures of health like height, will respond not only to the physical environment, but to the mental state (or *perceived* environment) of women involved. The negative effect of stress and pollutants on the SRB is so well established that in the past 5 years social scientists have begun to use the SRB as a proxy for fetal deaths [@sandersWhereHaveAll2015, Valente 2015].
+
+Given an SRB, the realized SR1 depends on the rate at girls and boys which survive infancy. The SR1 should be less than the SRB because male infant mortality is, in the absence of sex-discrimination, greater than that of females. This fact has been noted by physicians since at least 1786 [@bakwinSexFactorInfant1929] and continues to be a basic assumption in today's reports from the UN @waldronSexDifferencesInfant1998]. The sex-ratio of infant mortality depends on the disease environment, but generally ranges from 1.1-1.3 male deaths per female death [@alkemaNationalRegionalGlobal2014]. Part of this disadvantage is explained by a greater rate of congenital defaults in males, who lack a redundant X chromosome, but females also have lower risk of mortality from infectious disease [@drevenstedtRiseFallExcess2008].
+
+# Demography
+
+This female mortality advantage has powerful demographic implications for the SR1. If a population has very low infant mortality, say 5 per 1000 like Canada in 2018, then the SR1 will be very similar to the SRB. If, on the other hand, a population has an infant mortality rate of 200 per 1000, as was common in much the world up until the 1960's, then the SR1 will be substantially lower than the SRB.
+
+For example, consider the well-known Coale and Demeny model life tables, and two mortality regimes, Levels 19 and 5, with female life-expectancy of 65 years and 30 years respectively. Using the “West” family of tables, the SR1 in the higher mortality regime would be 2.9% greater.[^2]  Moving from Level 19 to Level 5 sees infant mortality (q0) increase from 57 to 276 (per thousand);  with a SRB of 1.05, the life-tables imply a drop from 104.0 to 101.0 in the SR1. And that drop would be an understatement of the expected change in the SR1, because a society with higher infant mortality would tend to have a lower SRB. In this example, a drop in the SRB from 1.05 to 1.03 would be a cautious estimate, based a range of theory and evidence.[^3]  Combining the effects of both increased fetal and infant mortality, a society fitting the Level 5 mortality regime would have an SR1 of just 99.1, compared to a value of 104.0 for a society fitting the Level 19 regime. Different life tables and assumptions would generate predicted values for SR1’s across infant mortality regimes, but the key point for current purposes is simply that long-standing life table modeling features a clear inverse relationship between infant mortality and the SR1.[^4]  In other words, mainstream demographic theory and evidence help to substantiate our call to look at the SR1 as a potential indicator of maternal and infant health and physical well-being.
+
+Thus we have two, distinct determinants of the SR1: (1) maternal conditions which affect the SRB; and (2) infant mortality. *Ceteris paribus*, worse maternal conditions imply a lower SR1, as does greater infant mortality.
+
+
+# References 
+
+[^1]: For example, see the seminal work on the Kobe earthquake in Japan [@fukudaDeclineSexRatio1998], and the work of Catalano et.al. (2003, 2005, 2006, and 2008), all of which explore relatively subtle changes in the SRB. For a more extreme example, see that of the Aamjiwnaang nation in Ontario [@mackenzieDecliningSexRatio2005], where toxic chemical exposure has lead to an SRB of 53. 
+
+[^2]: Authors’ calculations from the model life tables (Coale and Demeny, 1983: 34, 44, 51), viewing a table as a stationary population with 100,000 live births per year (Kintner 2004: 306-7); the model SR1 is the product of the assumed SBR and the ratio of the male to female L(0) values.  
+
+[^3]: See e.g. Klasen & Wink (2002: 288) for results suggesting a 0.9 percentage point decrease in the SBR from a 10-year decrease in life-expectancy. Our example features a 35-year difference if life expectancy, making our suggested 2 percentage point drop in the SBR quite cautious.
+
+[^4]: Using Klasen (1994: 1064) points out that the Coale and Demeny “West” family of life tables tend to understate the mortality disadvantage of male infants. Using tables from the “East” family implies slightly larger SR1 differentials from a given difference in mortality regimes. For example, using the “East” family in our  scenario above (moving from level 19 to  level 5), infant mortality (q0) rises from 72 to 335 (per thousand); with SRBs of 105 and 103, the model SR1 drops from 103.9 to 97.0 (Coale & Demeny, 1983: 272, 279). 
