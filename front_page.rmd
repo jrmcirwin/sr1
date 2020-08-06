@@ -1,9 +1,10 @@
 ---
-title: "The Infant Sex-Ratio as a One-sided Measure of Maternal-Infant Health"
-author: "James R. Irwin and Jesse McDevitt-Irwin[^1]"
+title: "The Infant Sex-Ratio and Maternal-Infant Health"
+author: "Jesse McDevitt-Irwin[^1] and James R. Irwin"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 bibliography: ["/home/friend/Research/Bib/bib.bib"]
 biblio-style: "apalike"
+output: html_document
 
 ---
 
@@ -11,29 +12,32 @@ biblio-style: "apalike"
 library(tidyverse)
 ```
 
-The sex-ratio of infants (the number of boys over the number of girls, henceforth SR1) is a pontentially useful measure of maternal-infant health for historians and social scientists. The sex-ratio at birth (SRB) of a healthy population is around 106 males per 100 females [@grechUnexplainedDifferencesSex2002; @chahnazarianDeterminantsSexRatio1988], but decreases with maternal stress [@jamesReviewEstablishedSuspected2017]. In infanthood, male infants are more likely to die than female infants [@alkemaNationalRegionalGlobal2014], meaning that the SR1 is negatively related to infant-mortality. The SR1 is available where other measures of population health are not, making it particularly useful for historical settings. 
+# Introduction
 
-The sex-ratio of infants is a _one-sided_ measure of maternal-infant health because of discrimination and neglect towards girls. If we observe a low sex-ratio, we can conclude that maternal-infant health conditions are poor. Biologically normal sex-ratios, on the other hand, may come from a healthy population or from sex-discrimination against girls. To demonstrate both the veracity of the SR1 as an indicator, and its one-sidedness, consider the following figure, which plots infant mortality against the SR1 on the country level:
+The sex-ratio of infants (the number of boys over the number of girls, henceforth SR1) is a pontentially useful measure of maternal-infant health for historians and social scientists. The sex-ratio at birth (SRB) of a healthy population is around 106 males per 100 females but decreases with maternal stress.[^2] Absence social pressures, male infants have greater mortality than female infants,[^3] meaning that the SR1 is negatively related to infant-mortality. The SR1 is available where other measures of population health are not, making it particularly useful for historical settings. 
 
+However, the SR1 is also determined by gendered social practices, which almost universally discriminate against girls. If we observe a low sex-ratio, we can conclude that maternal-infant health conditions are poor. However, there is a sense in which the measure is _one-sided_ because biologically normal sex-ratios may come from a healthy population or from sex-discrimination against girls.[^4] When comparing across societies, we must take into account differences in sex-discrimination as well as possible differences in living standards. 
 
+Consider figure 1, which plots infant mortality against the SR1 on the country level. Below the biologically normal SRB (105.7, represented by a black line), there is a clear, negative relationship between SR1 and infant mortality. For high sex-ratios, we see a weak, positive relationship. Moreover, the bottom-left corner of the figure is empty, which points to the one-sidedness of the measure. If a low SR1, then high infant-mortality. For high SR1's, there is no such relationship. If a high SR1, infant mortality could be high or low.
 
-```{r, cars, fig.cap="The SR1 is the ratio of males to females under the age of 1. Infant mortality is in deaths per 1000 live births. Each point is the unweighted average by country across years of SR1 and infant mortality, but he relationship is relatively stable across different weightings. The data comes from the UN Population Prospects. The black line represents the biologically normal sex-ratio at birth of 105.5.",fig.width=10,fig.height= 5.5, echo=FALSE, message = FALSE, warning=FALSE}
+```{r, cars, fig.cap="Figure 1: The SR1 is the ratio of males to females under the age of one. Infant mortality is in deaths per 1000 live births. The black line represents the biologically normal sex-ratio at birth of 105.7.[^5]",fig.width=10,fig.height= 5.5, echo=FALSE, message = FALSE, warning=FALSE}
 load("~/Research/ssmm/un_sr1.Rdata")
 x <-long %>% 
 	group_by(Country) %>%  
 	summarise(CC=CC,sr1 = mean(sr1,na.rm = T), mort = mean(mort, na.rm=T)) %>%
-	ggplot(aes(x=sr1,y=mort))+geom_point(aes(color =CC, label = Country))+geom_smooth(aes(),color="black")+ xlim(.975,1.10)+geom_vline(xintercept=1.055)+
+	ggplot(aes(x=sr1,y=mort))+geom_point(aes(color =CC, label = Country))+geom_smooth(aes(),color="black")+ xlim(.975,1.10)+geom_vline(xintercept=1.057)+
 	labs(x= "SR1",y = "Infant Mortality (1000)",title = "Infant Mortality by SR1: 1953-1988")+scale_color_brewer(palette="Set1")
 plotly::ggplotly(x, tooltip="label")
 ```
 
-Below the biologically normal SRB (105.5, represented by a black line), there is a clear, negative relationship between SR1 and infant mortality. For high sex-ratios, we see a weak, positive relationship. Moreover, the bottom-left corner of the figure is empty, which points to the one-sidedness of the measure. If a low SR1, then high infant-mortality. For high SR1's, there is no such relationship. If a high SR1, infant mortality could be high or low.
+Sources and notes. Each point is the unweighted average by country across years of SR1 and infant mortality, but the relationship is quite stable across different weightings. The data comes from the UN Population Prospects, available for download [here](https://population.un.org/wpp/Download/Standard/Interpolated/).
+
 
 # Biology and Demography of the SR1
 
 Key points: 
 
-* Increases in maternal stress, both physical and mental, lead to declines in the sex-ratio at birth.[^2]
+* Increases in maternal stress, both physical and mental, lead to declines in the sex-ratio at birth.[^6]
 * In the absence of sex-discrimination, infant-mortality is greater for males than females [@waldronTooYoungGenes1998].
 * With greater infant-mortality, the SR1 will drop further from the SRB.
 * The effect of increased infant mortality is clearly visible in standard life-tables.
@@ -55,7 +59,7 @@ To showcase the usefulness on the SR1 in studying historical living standards, w
 ## South Africa
 
 * The SR1 provide clear evidence of the _miserable_ conditions in which black South African lived during the colonial and Apartheid eras.
-* From the period of 1891-1946, the SR1 of black South Africans, ~94, was drastically lower than that of Whites, ~104.
+* From the period of 1891-1946, the SR1 of black South Africans, ~94, was drastically lower than that of Whites, ~104.[^7]
 * In 1991, the white SR1 was 104.7, and the black 101.4. The shrinking of this gap was likely due to the large decrease in infant mortality across South Africa in the post-WW2 period.
 
 
@@ -89,5 +93,16 @@ Given the historical availability of the population sex-ratios, a natural questi
 
 [^1]: Authors' information: Corresponding author is Jesse McDevitt-Irwin, a PhD Student in Sustainable Development at Columbia University, reachable at jrm2275@columbia.edu. James R. Irwin is Professor Emeritus Central Michigan University.
 
-[^2]: For example, see the seminal work on the Kobe earthquake in Japan [@fukudaDeclineSexRatio1998], and the work of Catalano et.al. (2003, 2005, 2006, and 2008), all of which explore relatively subtle changes in the SRB. For a more extreme example, see that of the Aamjiwnaang nation in Ontario [@mackenzieDecliningSexRatio2005], where toxic chemical exposure has lead to an SRB of 53. 
+[^2]: See for example @grechUnexplainedDifferencesSex2002, @maconochieSexRatiosAre1997 and @chahnazarianDeterminantsSexRatio1988. For the effect of maternal stress see [@jamesReviewEstablishedSuspected2017] for a review.
+
+[^3]: See[@alkemaNationalRegionalGlobal2014] for many precise stuff. See [@waldronTooYoungGenes1998] for a more general view.
+
+[^4]: For example, the sex-ratio of infants in Punjab in 1891 was 103, seemingly healthy. However, the sex-ratio of children aged 5-9 was 118, suggesting that female-infanticide, rather than good conditions, was responsible for the "healthy" SR1. For further exposition see [here](sex_discr.html)
+
+[^5]: Taken from [@maconochieSexRatiosAre1997] who measure the modern Scottish population.
+
+[^6]: For example, see the seminal work on the Kobe earthquake in Japan [@fukudaDeclineSexRatio1998], and the work of Catalano et.al. (2003, 2005, 2006, and 2008), all of which explore relatively subtle changes in the SRB. For a more extreme example, see that of the Aamjiwnaang nation in Ontario [@mackenzieDecliningSexRatio2005], where toxic chemical exposure has lead to an SRB of 53. 
+
+
+[^7]: Note that this is work in progress, and the SR1's need to be compared to the SR02 and SR05 in order to check for male-biased age-heaping.
 
