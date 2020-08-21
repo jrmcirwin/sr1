@@ -1,0 +1,34 @@
+---
+title: "Living Standars in the 19th Century: Evidence from the SR1"
+author: "Jim Irwin and Jesse McDevitt-Irwin"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+bibliography: ["/home/friend/Research/Bib/bib.bib"]
+biblio-style: "apalike"
+nocite: | 
+ 
+---
+```{r}
+library(tidyverse)
+```
+# France: Second through Third Republic 
+
+France has thorough, [accessible](https://www.insee.fr/fr/statistiques/2653233?sommaire=2591397) census data from 1851-1921, allowing us to calculate the sex-ratio of infants and children by _départment_ for each census year. 
+
+David Weir (1997) presents an overview of evidence on the biological standard of living in France during the 19th century. Height data shows no change between cohorts born in 1850 and 1880, slow improvement from 1880-1910, and fast improvement after World War Two. 
+
+Before 1900, urban mortality was greater than rural, but the introduction sewers and water treatment was lead to a shrinking of this urban-rural gap [@prestonUrbanFrenchMortality1978] [@kesztenbaumSewersDiffusionDecline2017] [@alsanWatershedsChildMortality2019].
+
+In figure 1, we split the French _départments_ into three groups: rural (_départments_ without a city over the size of 100,00), urban (_départments_ with at least one city of population between 100,000 and 500,000), and metropolitan (_départments_ with a city of over 500,000). The metropolitan group is just Paris, the urban group includs the _départments_ of Marseille, Lyon and other major regional centers, and the rural group includes the rest of the _départments_ and the vast majority of the population.
+
+```{r,fig.width=10,fig.height= 5.5, echo=FALSE, message = FALSE, warning=FALSE}
+load("/home/friend/Research/ssmm/rdata/france_1851_96.Rdata")
+france_clean%>% 
+  group_by(Year,Set) %>% 
+  summarise(sr = ((sum(Male_0, na.rm = T)+sum(Male_1, na.rm = T))/((sum(Fem_0,na.rm = T)+sum(Fem_1,na.rm = T))))) %>% 
+  ggplot()+ geom_point(aes(x=Year,y=sr,color=Set),size = 4)
+```
+We see that the SR1 in Paris was consistently lower than in rural areas or smaller cities,[^1] as would be expected by infant mortality figures. However, the SR1 of Paris does not improve after 1881, despite the supposed improvements in infant health. It could be that maternal stress was playing a greater role, through the SRB, in the SR1 then was infant mortality. The idea that Parisian working-class women were under tremendous mental and physical stress is certainly consistent with literature from the time, such as Emile Zola's _L'Assommoir_. Further research is needed to determine the explanation for such low sex-ratios in Paris at the turn of the 20th century, when height data and infant mortality records suggest substantial health improvements after 1880.
+
+# References
+
+[^1]: Except for the year of 1881. The remarkable closeness of all of the values suggests some enumeration problem.
