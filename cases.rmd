@@ -1,5 +1,5 @@
 ---
-title: "Living Standars in the 19th Century: Evidence from the SR1"
+title: "Living Standards in the 19th Century: Evidence from the SR1"
 author: "Jim Irwin and Jesse McDevitt-Irwin"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 bibliography: ["/home/friend/Research/Bib/bib.bib"]
@@ -10,7 +10,7 @@ nocite: |
 ```{r}
 library(tidyverse)
 ```
-# France: Second through Third Republic 
+# France: 1850-1900
 
 France has thorough, [accessible](https://www.insee.fr/fr/statistiques/2653233?sommaire=2591397) census data from 1851-1921, allowing us to calculate the sex-ratio of infants and children by _départment_ for each census year. 
 
