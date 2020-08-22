@@ -1,5 +1,6 @@
 ---
-title: "The Infant Sex-Ratio and Maternal-Infant Health"
+title: "The Infant Sex-Ratio and Maternal-Infant Health"	
+subtitle: "A work in progress"
 author: "Jesse McDevitt-Irwin[^1] and James R. Irwin"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 bibliography: ["/home/friend/Research/Bib/bib.bib"]
@@ -16,7 +17,7 @@ library(tidyverse)
 
 The sex-ratio of infants (the number of boys over the number of girls, henceforth SR1) is a pontentially useful measure of maternal-infant health for historians and social scientists. The sex-ratio at birth (SRB) of a healthy population is around 106 males per 100 females but decreases with maternal stress.[^2] Absence social pressures, male infants have greater mortality than female infants,[^3] meaning that the SR1 is negatively related to infant-mortality. The SR1 is available where other measures of population health are not, making it particularly useful for historical settings. 
 
-However, the SR1 is also determined by gendered social practices, which almost universally discriminate against girls. If we observe a low sex-ratio, we can conclude that maternal-infant health conditions are poor. However, there is a sense in which the measure is _one-sided_ because biologically normal sex-ratios may come from a healthy population or from sex-discrimination against girls.[^4] When comparing across societies, we must take into account differences in sex-discrimination as well as possible differences in living standards. 
+However, the SR1 depends on gendered social practices, which almost universally discriminate against girls. If we observe a low sex-ratio, we can conclude that maternal-infant health conditions are poor. However, there is a sense in which the measure is _one-sided_ because biologically normal sex-ratios may come from a healthy population or from sex-discrimination against girls.[^4] When comparing across societies, we must take into account differences in sex-discrimination as well as possible differences in living standards. 
 
 Consider figure 1, which plots infant mortality against the SR1 on the country level. Below the biologically normal SRB (105.7, represented by a black line), there is a clear, negative relationship between SR1 and infant mortality. For high sex-ratios, we see a weak, positive relationship. Moreover, the bottom-left corner of the figure is empty, which points to the one-sidedness of the measure. If a low SR1, then high infant-mortality. For high SR1's, there is no such relationship. If a high SR1, infant mortality could be high or low.
 
@@ -91,11 +92,11 @@ Given the historical availability of the population sex-ratios, a natural questi
 
 # References
 
-[^1]: Authors' information: Corresponding author is Jesse McDevitt-Irwin, a PhD Student in Sustainable Development at Columbia University, reachable at jrm2275@columbia.edu. James R. Irwin is Professor Emeritus Central Michigan University.
+[^1]: Authors' information: Corresponding author is Jesse McDevitt-Irwin, PhD Student in Sustainable Development at Columbia University, reachable at jrm2275@columbia.edu. James R. Irwin is Professor Emeritus at Central Michigan University.
 
 [^2]: See for example @grechUnexplainedDifferencesSex2002, @maconochieSexRatiosAre1997 and @chahnazarianDeterminantsSexRatio1988. For the effect of maternal stress see [@jamesReviewEstablishedSuspected2017] for a review.
 
-[^3]: See[@alkemaNationalRegionalGlobal2014] for many precise stuff. See [@waldronTooYoungGenes1998] for a more general view.
+[^3]: See [@alkemaNationalRegionalGlobal2014] and [@waldronTooYoungGenes1998].
 
 [^4]: For example, the sex-ratio of infants in Punjab in 1891 was 103, seemingly healthy. However, the sex-ratio of children aged 5-9 was 118, suggesting that female-infanticide, rather than good conditions, was responsible for the "healthy" SR1. For further exposition see [here](sex_discr.html)
 
