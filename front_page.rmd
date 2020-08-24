@@ -57,6 +57,7 @@ For our complete treatment of the biology and demography of the SR1, along with 
 
 To showcase the usefulness on the SR1 in studying historical living standards, we have collected census data from various 19th century sources.
 
+<a name="southafrica"></a> 
 ## South Africa
 
 * The SR1 provide clear evidence of the _miserable_ conditions in which black South African lived during the colonial and Apartheid eras.
@@ -64,17 +65,21 @@ To showcase the usefulness on the SR1 in studying historical living standards, w
 * In 1991, the white SR1 was 104.7, and the black 101.4. The shrinking of this gap was likely due to the large decrease in infant mortality across South Africa in the post-WW2 period.
 
 
+<a name="US-slaves"></a> 
 ## American Slaves
 
 * The SR1 provides clear evidence of the _miserable_ conditions of slaves in the Antebellum South.
 * The SR1 of slaves is ~95, while that of whites in the same counties is ~104.
 * Since 1860, the SR1 of Black Americans has improved, though it remains below that of whites.
 
+<a name="gb-ireland"></a> 
 ## Great Britain and Ireland in the 19th century
 
 * Ireland and Scotland have relatively high SR02's during the mid-19th century, 104.3 and 103.7 respectively. 
 * England has a surprisingly low SR02 of 98 in 1841 and 100.6 in 1851.
 * Together, these results suggest that a large degree of physical misery came with England's early industrialization and urbanization, relative to its rural neighbors.
+
+<a name="france"></a>
 
 ## France in the 19th century
 
@@ -84,15 +89,16 @@ To showcase the usefulness on the SR1 in studying historical living standards, w
 
 For examples of applications of the SR1 to census data from the 19th and 20th century, click [here](cases.html)
 
+<a name="missing"></a>
 # The SR1 and Missing Girls
 
 Given the historical availability of the population sex-ratios, a natural question would be whether the SR1 might also shed light on the question of missing women. As stated above, a low SR1 is unambiguous and implies poor maternal-infant conditions. A high SR1, e.g. 105, on the other hand, might be caused by good maternal-infant conditions, or by female infanticide and neglect. Looking only at the SR1, these two effects cannot be disentangled. However, by comparing across age groups, we may be able to detect excess female mortality. See [here](sex_discr.html) for a treatment of the SR1 and missing girls.
 
 
-
+<a name="references"></a>
 # References
 
-[^1]: Authors' information: Corresponding author is Jesse McDevitt-Irwin, PhD Student in Sustainable Development at Columbia University, reachable at jrm2275@columbia.edu. James R. Irwin is Professor Emeritus at Central Michigan University.
+[^1]: Authors' information: Corresponding author is Jesse McDevitt-Irwin, PhD Student in Sustainable Development at Columbia University (jrm2275@columbia.edu). James R. Irwin is retired Professor of Economics, Central Michigan University.
 
 [^2]: See for example @grechUnexplainedDifferencesSex2002, @maconochieSexRatiosAre1997 and @chahnazarianDeterminantsSexRatio1988. For the effect of maternal stress see [@jamesReviewEstablishedSuspected2017] for a review.
 
