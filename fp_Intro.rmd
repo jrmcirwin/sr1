@@ -9,16 +9,15 @@ library(tidyverse)
 
 # Introduction
 
-The infant sex ratio (SR1) is an important population-level dimension of maternal and infant health (physical and mental), and sex ratios among infants and children in a population have great potential as indicators of well-being of mothers and children (two groups for whom other measures of health and welfare are often lacking).^[As discussed below, high values of child sex ratios are familiar from social science research on "missing girls". Our attention to *low* sex ratios among infant and children is an extension of research on the sex ratio at birth (SRB) as population-level health indicator; e.g. James and Grech (2018), Grech and Masukume (2016). Earlier research identified reductions in the SBR as a result of stressful events (floods, earthquakes, severe family health events, and the 9-11 attacks: see Lyster (1965); Fukuda et al. (1998); Hansen, Møller, and Olsen (1999); Catalano et al. (2005)).] The sex ratio at birth (SRB) in a healthy population tends towards 106 males per 100 females, but decreases with maternal stress.^[For a healthy SRB of 106 see e.g. Maconochie and Roman (1997), who report a SRB of 1.058 in over 1/2 million births in Scotland for the period 1975-1988. For the SRB decreasing with maternal stress, see e.g. West and Grech (2020). See also James and Grech (2017), on the considerable debate over precise mechanisms and evolutionary implications, because of which the SRB "remains one of the most longstanding unresolved problems in the biological sciences" (2017:50).] And on biological grounds, child sex ratios fall as mortality rises, because among infants and children, mortality tends to be relatively greater among males than females.^[See e.g. Waldron (1983:324-25). See also Hammoud (1965). An early and convenient statement of male-biased infant and child mortality is offered in the 1861 Census of Scotland: "At birth 106 males appear for every 100 females ...; yet, by the law of nature, -- a law seen in still more powerful operation even in intra uterine life -- the tendency to succumb under disease is so much greater in the male than in the female, that by about the 18th year of life the proportion of the sexes becomes equalized, 100 males being alive at that age for every 100 females".] Absent sex-based differences in nutrition and care, deleterious living conditions for pregnant women, infants, and nursing mothers in a population will be reflected in low ratios of boys to girls -- at birth, in infancy, and among children.^[Although female-biased mortality is a possibility for a few diseases (Garenne and Lafon 1986:176), on the whole it seems clear that it requires sex-based discrimination against girls in nutrition and care to generate a rising sex ratio in a population (where the population is large enough that random fluctuations in the sex ratio cancel out).] Elevated child sex ratios have been a focus of attention in social science research pursuing Sen's (198?) insights on the problem of "missing women" in the context of mortal misogny, but depressed child sex ratios are simpler indicators of deleterious conditions of life for pregnant women and nursing children. Of particular importance for research on historical populations, evidence on infant and child sex ratios is often available when infant mortality rates and various economic indicators are not.
+The infant sex ratio (SR1) is an important population-level dimension of maternal and infant health (physical and mental), and sex ratios among infants and children in a population have great potential as indicators of well-being of mothers and children (two groups for whom other measures of health and welfare are often lacking).^[As discussed below, high values of child sex ratios are familiar from social science research on "missing girls". Our attention to *low* sex ratios among infant and children is an extension of recent research on the sex ratio at birth (SRB) as a population-level health indicator: e.g. James and Grech (2018), Grech and Masukume (2016). Earlier work identified reductions in the SBR as a result of stressful events (floods, earthquakes, severe family health events, and the 9-11 attacks: see Lyster (1965); Fukuda et al. (1998); Hansen, Møller, and Olsen (1999); Catalano et al. (2005)). ] The sex ratio at birth (SRB) in a healthy population tends towards 106 males per 100 females, but decreases with maternal stress.^[For a healthy SRB of 106 see e.g. Maconochie and Roman (1997), who report a SRB of 1.058 in over 1/2 million births in Scotland for the period 1975-1988. For the SRB decreasing with maternal stress, see e.g. West and Grech (2020). See also James and Grech (2017), on the considerable debate over precise mechanisms and evolutionary implications, because of which the SRB "remains one of the most longstanding unresolved problems in the biological sciences" (2017:50).] And on biological grounds, child sex ratios fall as mortality rises, because among infants and children, mortality tends to be relatively greater among males than females.^[See e.g. Waldron (1983:324-25). See also Hammoud (1965). An early and convenient statement of male-biased infant and child mortality is offered in the 1861 Census of Scotland: "At birth 106 males appear for every 100 females ...; yet, by the law of nature, -- a law seen in still more powerful operation even in intra uterine life -- the tendency to succumb under disease is so much greater in the male than in the female, that by about the 18th year of life the proportion of the sexes becomes equalized, 100 males being alive at that age for every 100 females".] Absent sex-based differences in nutrition and care, deleterious living conditions for pregnant women, infants, and nursing mothers in a population will be reflected in low ratios of boys to girls -- at birth, in infancy, and among children.^[Although female-biased mortality is a possibility for a few diseases (Garenne and Lafon 1986:176), on the whole it seems clear that it requires sex-based discrimination against girls in nutrition and care to generate a rising sex ratio in a population (where the population is large enough that random fluctuations in the sex ratio cancel out).] Elevated child sex ratios have been a focus of attention in social science research pursuing Sen's (1990, 1992) insights on the problem of "missing women" in the context of mortal misogny, but depressed child sex ratios are simpler indicators of deleterious conditions of life for pregnant women and nursing children. Of particular importance for research on historical populations, evidence on infant and child sex ratios is often available when infant mortality rates and various economic indicators are not.   
 
-   JIM ENDS HERE TODAY
+However, the infant sex ratio (SR1, henceforth) also reflects gendered social practices (environment, for biologists), which discriminate against girls.^[We cannot find any populations with gender-based discrimination against males, so we note but ignore the possibility that low infant sex ratios reflect discrimination against males in an otherwise healthy population.] Those practices push up infant and child sex ratios; and post-ultra-sound, they push up the sex ratio at birth. Given the ubiquity of discimination against girls, when we observe a low infant sex-ratio, we can conclude that maternal/infant health conditions were poor. However, apparently healthy child sex-ratios could instead could result from mortal misogyny in the context of deletious living conditions.^The infant sex-ratio in Punjab in 1891 was 103, apparently healthy for the time, However, the sex ratio of children aged 5-9 was 118. Our understanding is that female-infanticide, not good conditions, explain the “healthy” SR1. For further exposition see below]
+When comparing across societies, we must take into account differences in sex-discrimination as well as possible differences in living standards. And so, there is a sense in which infant sex-ratios offer a _one-sided_ test of infant and maternal misery, because biologically normal sex-ratios may result from a healthy population or from sex-discrimination against girls. When comparing across societies, we must take into account differences in sex-discrimination as well as possible differences in living standards.  BUT WE KNOW THE DIRECTION OF BIAS     ... and now, Jim is done for the day ... 
 
 
-However, the infant sex ratio (SR1, henceforeth) is also affected by gendered social practices, which discriminate against girls. FOOTNOTE: we will be delighted to find any example of a population in which gender-based discrimination was directed against males.] Those practices can push up infant and child sex ratios (and, post-ultra-sound, they can push up the sex ratio at birth). Given the ubiquity of discimination against girls, when we observe a low infant sex-ratio, we can conclude that maternal/infant health conditions were poor. However, there is a sense in which the measure is one-sided: biologically normal sex-ratios could reflect healthy maternal/infant conditions, but they instead could result from mortal miscogeny in the context of poor living conditions.4  When comparing across societies, we must take into account differences in sex-discrimination as well as possible differences in living standards.
 
-The sex-ratio of infants (the number of boys over the number of girls, henceforth SR1) is a pontentially useful measure of maternal-infant health for historians and social scientists. The sex-ratio at birth (SRB) of a healthy population is around 106 males per 100 females but decreases with maternal stress.[^2] Absence social pressures, male infants have greater mortality than female infants,[^3] meaning that the SR1 is negatively related to infant-mortality. The SR1 is available where other measures of population health are not, making it particularly useful for historical settings. 
 
-However, the SR1 depends on gendered social practices, which almost universally discriminate against girls. If we observe a low sex-ratio, we can conclude that maternal-infant health conditions are poor. However, there is a sense in which the measure is _one-sided_ because biologically normal sex-ratios may come from a healthy population or from sex-discrimination against girls.[^4] When comparing across societies, we must take into account differences in sex-discrimination as well as possible differences in living standards. 
+
 
 Consider figure 1, which plots infant mortality against the SR1 on the country level. Below the biologically normal SRB (105.7, represented by a black line), there is a clear, negative relationship between SR1 and infant mortality. For high sex-ratios, we see a weak, positive relationship. Moreover, the bottom-left corner of the figure is empty, which points to the one-sidedness of the measure. If a low SR1, then high infant-mortality. For high SR1's, there is no such relationship. If a high SR1, infant mortality could be high or low.
 
@@ -27,76 +26,4 @@ Consider figure 1, which plots infant mortality against the SR1 on the country l
 Sources and notes. Each point is the unweighted average by country across years of SR1 and infant mortality, but the relationship is quite stable across different weightings. The data comes from the UN Population Prospects, available for download [here](https://population.un.org/wpp/Download/Standard/Interpolated/).
 
 
-# Biology and Demography of the SR1
-
-Key points: 
-
-* Increases in maternal stress, both physical and mental, lead to declines in the sex-ratio at birth.[^6]
-* In the absence of sex-discrimination, infant-mortality is greater for males than females [@waldronTooYoungGenes1998].
-* With greater infant-mortality, the SR1 will drop further from the SRB.
-* The effect of increased infant mortality is clearly visible in standard life-tables.
-* Increased fertility causes the SR1 to rise, but this effect is second-order small relative to the infant-mortality and maternal stress effects.
-
-
-For our complete treatment of the biology and demography of the SR1, along with relevant citations, click [here](biology.html).
-
-
-# Practical Aspects of the SR1 in Historical Data
-
-* The underlying binomial distribution gives rise to substantial variance in the SR1, so fairly large samples are often required to detect important differences.
-* In cases of male-biased age-heaping at one year old, the sex-ratio of children under 2 (SR02) or under 5 (SR05) can be useful.
-
-# Case Studies
-
-To showcase the usefulness on the SR1 in studying historical living standards, we have collected census data from various 19th century sources.
-
-## South Africa
-
-* The SR1 provide clear evidence of the _miserable_ conditions in which black South African lived during the colonial and Apartheid eras.
-* From the period of 1891-1946, the SR1 of black South Africans, ~94, was drastically lower than that of Whites, ~104.[^7]
-* In 1991, the white SR1 was 104.7, and the black 101.4. The shrinking of this gap was likely due to the large decrease in infant mortality across South Africa in the post-WW2 period.
-
-
-## American Slaves
-
-* The SR1 provides clear evidence of the _miserable_ conditions of slaves in the Antebellum South.
-* The SR1 of slaves is ~95, while that of whites in the same counties is ~104.
-* Since 1860, the SR1 of Black Americans has improved, though it remains below that of whites.
-
-## Great Britain and Ireland in the 19th century
-
-* Ireland and Scotland have relatively high SR02's during the mid-19th century, 104.3 and 103.7 respectively. 
-* England has a surprisingly low SR02 of 98 in 1841 and 100.6 in 1851.
-* Together, these results suggest that a large degree of physical misery came with England's early industrialization and urbanization, relative to its rural neighbors.
-
-## France in the 19th century
-
-* France has relatively good census data, allowing us to calculate sex-ratios on the _département_ level.
-* Paris shows an SR1 consistenly lower than that of either rural _départements_ or smaller cities like Marseilles and Lyon.
-
-
-For examples of applications of the SR1 to census data from the 19th and 20th century, click [here](cases.html)
-
-# The SR1 and Missing Girls
-
-Given the historical availability of the population sex-ratios, a natural question would be whether the SR1 might also shed light on the question of missing women. As stated above, a low SR1 is unambiguous and implies poor maternal-infant conditions. A high SR1, e.g. 105, on the other hand, might be caused by good maternal-infant conditions, or by female infanticide and neglect. Looking only at the SR1, these two effects cannot be disentangled. However, by comparing across age groups, we may be able to detect excess female mortality. See [here](sex_discr.html) for a treatment of the SR1 and missing girls.
-
-
-
 # References
-
-[^1]: Authors' information: Corresponding author is Jesse McDevitt-Irwin, PhD Student in Sustainable Development at Columbia University, reachable at jrm2275@columbia.edu. James R. Irwin is Professor Emeritus at Central Michigan University.
-
-[^2]: See for example @grechUnexplainedDifferencesSex2002, @maconochieSexRatiosAre1997 and @chahnazarianDeterminantsSexRatio1988. For the effect of maternal stress see [@jamesReviewEstablishedSuspected2017] for a review.
-
-[^3]: See [@alkemaNationalRegionalGlobal2014] and [@waldronTooYoungGenes1998].
-
-[^4]: For example, the sex-ratio of infants in Punjab in 1891 was 103, seemingly healthy. However, the sex-ratio of children aged 5-9 was 118, suggesting that female-infanticide, rather than good conditions, was responsible for the "healthy" SR1. For further exposition see [here](sex_discr.html)
-
-[^5]: Taken from [@maconochieSexRatiosAre1997] who measure the modern Scottish population.
-
-[^6]: For example, see the seminal work on the Kobe earthquake in Japan [@fukudaDeclineSexRatio1998], and the work of Catalano et.al. (2003, 2005, 2006, and 2008), all of which explore relatively subtle changes in the SRB. For a more extreme example, see that of the Aamjiwnaang nation in Ontario [@mackenzieDecliningSexRatio2005], where toxic chemical exposure has lead to an SRB of 53. 
-
-
-[^7]: Note that this is work in progress, and the SR1's need to be compared to the SR02 and SR05 in order to check for male-biased age-heaping.
-
