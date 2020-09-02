@@ -65,6 +65,10 @@ The shrinking of this gap was likely due to the large decrease in infant mortali
 * The SR1 of slaves is ~95, while that of whites in the same counties is ~104.
 * Since 1860, the SR1 of Black Americans has improved, though it remains below that of whites.
 
+<a name="US-BW20"></a> 
+## [Black and White in the 20th-Century US](US-BW.pdf)
+
+
 <a name="gb-ireland"></a> 
 ## Great Britain and Ireland in the 19th century
 
