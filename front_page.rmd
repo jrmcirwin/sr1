@@ -47,7 +47,7 @@ For our more complete treatment of the biology and demography of the SR1, along 
 
 # Practical Aspects of the SR1 in Historical Data
 
-* The underlying binomial distribution gives rise to substantial variance in the SR1, so fairly large samples are often required to detect important differences.
+* The underlying binomial distribution gives rise to substantial variance in the SR1, so fairly large samples are often required to detect important differences. See [here](Binomial.pdf) for further discussion.
 * When census data exhibits male-biased age-heaping at one year old, sex ratios for under age 2 (SR02) or under age 5 (SR05) may serve as effective indicators of well-being. See [here](AgeHeap.html) for an example of male-biased age-heaping in the US census.
 
 # Case Studies
