@@ -1,6 +1,6 @@
 ---
 title: "Age Heaping and measured Sex Ratios among infants and young children"
-date: "06/07/2020"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
@@ -15,9 +15,14 @@ Absent a recent catastrophe, the number of infants (less than one-year old) in a
      
 **NY State, 1860: Infant and Young-child Sex Ratios**
 
-```{r jim1, echo=FALSE, out.width = '70%'}
-knitr::include_graphics("NY60SRs.png")
-```  
+
+|Age| 0 | 1 | 2 | 3 | 4 | 1-4 | 5|
+|:------:|:------: |:------: |:------: |:------: |:------: |:------: | :------:|
+|Males|51705| 51757| 55751| 54923| 54096| 803091| 51170| 
+|Females| 50841|49738|54723|54042|52788|783546|49891|
+|Sex Ratio|101.7|104.1|101.9|101.6|102.5|102.5|102.6|
+
+
 <br>
 **Source** [1860 PUMS full-count](https://usa.ipums.org/usa/sampdesc.shtml#us1860c)
 <br>
