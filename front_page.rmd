@@ -45,9 +45,9 @@ Key points:
 For our more complete treatment of the biology and demography of the SR1, along with relevant citations, click [here](biology.html).
 
 
-# Practical Aspects of the SR1 in Historical Data
+# Binomial Variation and Age Heaping
 
-* The underlying binomial distribution gives rise to substantial variance in the SR1, so fairly large samples are often required to detect important differences. See [here](Binomial.pdf) for further discussion.
+* The underlying binomial distribution gives rise to substantial variance in the SR1, so fairly large samples are often required to detect important differences. See [here](binomial.pdf) for further discussion.
 * When census data exhibits male-biased age-heaping at one year old, sex ratios for under age 2 (SR02) or under age 5 (SR05) may serve as effective indicators of well-being. See [here](AgeHeap.html) for an example of male-biased age-heaping in the US census.
 
 # Case Studies
@@ -60,7 +60,6 @@ Our work in progress is drawing on a range of census data to explore the usefuln
 
 * The SR1 provides striking evidence of the _miserable_ conditions in which black South African lived during the colonial and Apartheid eras. In South Africa in the half-century 1891, the SR1 for Blacks fell in the range 91 to 93 and the SR1 for whites fell in the range 103 to 104. 
 * By 1991, the black-white gap in the SR1 had narrowed considerably, with the SR1 for Blacks rising to 101.4, with a much smaller increase in the white SR1, to 104.7. 
-* 
 
 In the South African census of 1991, the white SR1 was 104.7, and the black SR1 was 101.4. 
 
