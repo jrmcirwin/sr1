@@ -40,7 +40,7 @@ Comparing across countries, the SR1 suggests that in 1850 the French population 
 
 [^1]: For an overview of the literature from an applied economics perspective, see Almond et. al. (2011).
 
-[^2]: Except for the year of 1881. The remarkable closeness of all of the values suggests some enumeration problem.
+[^2]: Except for the year of 1881where the SR1 in Paris is nearly identical to the SR1 in the rural part of the sample. This seems highly improbable given the stable ranking of all other years.
 
 
-[^3]: See 1881, where the SR1 in Paris is nearly identical to the SR1 in the rural part of the sample. This seems highly improbable given the stable ranking of all other years.
+[^3]: See footnote 2.

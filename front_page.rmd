@@ -1,6 +1,6 @@
 ---
 title: "Infant Sex-Ratios and Maternal-Infant Health"	
-subtitle: "A work in progress"
+subtitle: "A open-source work in progress: GNU GPL v3.O"
 author: "Jesse McDevitt-Irwin[^1] and James R. Irwin"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 bibliography: ["/home/friend/github/sr1/files/0SSMM.bib"]
@@ -15,9 +15,9 @@ library(tidyverse)
 
 # Introduction
 
-The infant sex ratio (SR1) offers an important perspective on maternal and infant health (physical and mental) in a population. And observations of sex ratios have great potential as indicators of the well-being of mothers and children (two groups for whom other measures of health and welfare are often lacking).[^2] The sex ratio at birth (SRB) in a healthy population tends towards 106 males per 100 females, but decreases with maternal stress.[^3] And on biological grounds, the infant sex ratio (SR1) falls as mortality rises, because infant mortality tends to be relatively greater among males than females.[^4] Absent sex-based differences in nutrition and care, deleterious living conditions for pregnant women, infants, and nursing mothers in a population will be reflected in low ratios of boys to girls -- at birth, in infancy, and among children.[^5] Elevated child sex ratios are familiar from social science research pursuing Sen's (1990, 1992) call for attention to "missing women" in the context of mortal misogyny; but depressed child sex ratios are simpler indicators of deleterious conditions of life for pregnant women and nursing children. Of particular importance for research on historical populations, evidence on infant and child sex ratios is often available when infant mortality rates and various economic indicators are not.   
+The infant sex ratio (SR1) offers an important perspective on maternal and infant health. And observations of sex ratios have great potential as indicators of the well-being of mothers and children, two groups for whom other measures of health and welfare are often lacking.[^2] The sex ratio at birth (SRB) in a healthy population tends towards 106 males per 100 females, but decreases with maternal stress.[^3] On biological grounds, the infant sex ratio (SR1) falls as mortality rises, as infant mortality tends to be relatively greater among males than females.[^4] Absent sex-based differences in nutrition and care, deleterious living conditions for pregnant women, infants, and nursing mothers in a population will be reflected in low ratios of boys to girls -- at birth, in infancy, and among children.[^5] Elevated child sex ratios are familiar from social science research pursuing Sen's (1990, 1992) call for attention to "missing women" in the context of mortal misogyny; but depressed child sex ratios are also indicators of deleterious conditions of life for pregnant women and nursing children. Of particular importance for research on historical populations, evidence on infant and child sex ratios is often available when infant mortality rates and various economic indicators are not.   
 
-However, the infant sex ratio (SR1, henceforth) can also reflect gendered social practices, which discriminate against girls.[^6] When frequent and severe enough, such practices amount to mortal misogyny, which pushes up sex ratios among infants and children.[^7] Given the ubiquity of discimination against girls, when we observe a low infant sex-ratio, we can conclude simply that maternal/infant health conditions were poor. However, apparently healthy child sex ratios could result from mortal misogyny in the context of deleterious living conditions.[^8] Because female infanticide and other forms of mortal misogyny will inflate infant and child sex ratios, the ratios offer a one-sided test of infant and maternal misery. Low infant sex ratios are a strong signal of poor living conditions for infants and mothers, but healthy-looking sex ratios could reflect a combination of poor living conditions and severe forms of discrimination against girls.[^9] When comparing across societies, we must be alert for the potential role of sex-discrimination when interpreting sex-ratio data. 
+However, the infant sex ratio (SR1, henceforth) can also reflect gendered social practices, which discriminate against girls.[^6] When frequent and severe enough, such practices amount to mortal misogyny, which increases sex ratios among infants and children.[^7] Given the ubiquity of discrimination against girls, when we observe a low infant sex-ratio, we can conclude simply that maternal-infant health conditions were poor. However, apparently healthy child sex ratios could result from mortal misogyny in the context of deleterious living conditions.[^8] Because female infanticide and other forms of mortal misogyny will inflate infant and child sex ratios, the ratios offer a one-sided test of infant and maternal misery. Low infant sex ratios are a strong signal of poor living conditions for infants and mothers, but healthy-looking sex ratios could reflect a combination of poor living conditions and severe forms of discrimination against girls.[^9] When comparing across societies, we must be alert for the potential role of sex-discrimination when interpreting sex-ratio data. 
 
 To make an initial case for the value of the infant sex ratio as a measure of living conditions, consider figure 1, plotting infant mortality against the SR1 on the country level. Below the biologically normal SRB (105.7, represented by a black line), there is a clear, negative relationship between SR1 and infant mortality.[^9] Of particular importance, the bottom-left corner of the figure is empty, which points to the one-sidedness of the measure. If a low SR1, then high infant-mortality. For high SR1's, there is no such relationship. If a high SR1, infant mortality could be high or low. More generally, the plot of infant mortality against the SR1 illustrates the value of low levels of the SR1 as a signal of deleterious living conditions. 
 
@@ -31,10 +31,9 @@ x <-long %>%
 plotly::ggplotly(x, tooltip="label")
 ```
 
+Below we explore the biology behind the SR1, some practical concerns in its use, and several case studies which use the SR1 to infer living standards from historical populations. Each heading provides a link to our full discussion, while the bullet points provide a summary.
 
-# Biology and Demography of the SR1
-
-Key points: 
+<h2><a href="biology.pdf">Biology and Demography of the SR1</a></h2>
 
 * Increases in maternal stress, both physical and mental, cause declines in the sex-ratio at birth (e.g. [@catalanoNaturalSelectionUtero2013])[^11]  
 * In the absence of sex-discrimination, infant-mortality is greater for males than females [e.g. @waldronSexDifferencesInfant1998].
@@ -42,13 +41,13 @@ Key points:
 * The effect of increased infant mortality is clearly visible in standard life-tables.
 * Increased fertility causes the SR1 to rise, but this effect is second-order small relative to the infant-mortality and maternal stress effects.
 
-For our more complete treatment of the biology and demography of the SR1, along with relevant citations, click [here](biology.html).
+
+<h2><a href="binomial.pdf">Binomial Variation</a> and <a href="AgeHeap.pdf"> Age Heaping</a></h2>
 
 
-# Binomial Variation and Age Heaping
+* The underlying binomial distribution gives rise to substantial variance in the SR1, so fairly large samples are often required to detect important differences. 
+* When census data exhibits sex-biased age-heaping at one year old, sex ratios for under age 2 (SR02) or under age 5 (SR05) may serve as effective indicators of well-being. 
 
-* The underlying binomial distribution gives rise to substantial variance in the SR1, so fairly large samples are often required to detect important differences. See [here](binomial.pdf) for further discussion.
-* When census data exhibits male-biased age-heaping at one year old, sex ratios for under age 2 (SR02) or under age 5 (SR05) may serve as effective indicators of well-being. See [here](AgeHeap.html) for an example of male-biased age-heaping in the US census.
 
 # Case Studies
 
@@ -58,58 +57,57 @@ Our work in progress is drawing on a range of census data to explore the usefuln
 
 ## South Africa
 
-* The SR1 provides striking evidence of the _miserable_ conditions in which black South African lived during the colonial and Apartheid eras. In South Africa in the half-century 1891, the SR1 for Blacks fell in the range 91 to 93 and the SR1 for whites fell in the range 103 to 104. 
-* By 1991, the black-white gap in the SR1 had narrowed considerably, with the SR1 for Blacks rising to 101.4, with a much smaller increase in the white SR1, to 104.7. 
-
-In the South African census of 1991, the white SR1 was 104.7, and the black SR1 was 101.4. 
-
-The shrinking of this gap was likely due to the large decrease in infant mortality across South Africa in the post-WW2 period.
+* The SR1 provides striking evidence of the _miserable_ conditions in which black South African lived during the colonial and Apartheid eras. Between 1891 and 1945, the SR1 for Blacks fell in the range 91 to 93 and the SR1 for whites fell in the range 103 to 104. 
+* By 1991, the black-white gap in the SR1 had narrowed considerably, with the SR1 for Blacks rising to 101.4, with a much smaller increase in the white SR1, to 104.7. The shrinking of this gap was likely due to the large decrease in infant mortality across South Africa in the post-WW2 period.
 
 
 <a name="US-slaves"></a>   
 
-## American Slaves
+<h2><a href="USslaves.pdf">American Slaves</a></h2>
 
-* The SR1 provides clear evidence of the _miserable_ conditions of slaves in the Antebellum South.
-* The SR1 of slaves is ~95, while that of whites in the same counties is ~104.
-* Since 1860, the SR1 of Black Americans has improved, though it remains below that of whites.
+* Child sex ratios provide clear evidence of the _miserable_ conditions of slaves in the Antebellum South, corroborating the characterizations of Steckel (1986).
+* The SR5 of southern slaves was less than 98, while that of southern whites was over 104. <small>The SR0 for slaves in 1850 and 1860 is biased downward due to male-biased age-heaping in census counts of slaves. To compensate for the male-biased age-heaping, we pool counts of infants with the age group "one and under five" and use the under-5 sex ratio (SR5).</small>
+* Restricting attention to the slave South reveals a greater slave/white gap in the SR5, reflecting a slightly greater white SR5 and slightly smaller slave SR5 in the slave South relative to the non-slave South.
+* Since emancipation, infant sex ratios of Black Americans have improved, but they remain below those of whites.
+
 
 <a name="US-BW20"></a> 
+<h2><a href="US-BW.pdf">Black and White in the 20th-Century US</a></h2>
 
-## Black and White in the 20th-Century US
 * Sex-ratio evidence points to stagnation of black health in the first half of the 20th century. At census benchmarks before 1950, the black SR2 hovered around 99 points, while the white SR2 crept up from 103 to 104.
 * Improvements in the Black SR2, and some narrowing of the racial sex-ratio gap, are evident in the eight decades after 1940. The Black SR2 climbed from 98.9 in 1940 to about 103.1 in 2000.    
 * The black-white SR2 gap fell from some 5 percentage points early in the century to just 2 percentage points in 2010.    
 * The sex-ratio evidence largely re-enforces current knowledge of racial health inequities in the US.   
 * The sex-ratio evidence points to possibilities of errors in current estimates of black infant mortality. Current estimates of the black IMR suggest big improvements in the first half of the 20th century. Sex-ratio evidence suggest instead that the period after 1960 saw the biggest gains in black children's well-being.    
 
-Click [here](US-BW.pdf) for our work on black and white child sex ratios in the 20th-C US. 
-
 
 <a name="gb-ireland"></a>
 
-## Great Britain and Ireland in the 19th century
+<h2><a href="GB-IRL.pdf">Great Britain and Ireland in the 19th century</a></h2>
+
 
 * Ireland and Scotland have relatively high SR02's during the mid-19th century, 104.3 and 103.7 respectively. 
 * England has a surprisingly low SR02 of 98 in 1841 and 100.6 in 1851.
 * Together, these results suggest that a large degree of physical misery came with England's early industrialization and urbanization, relative to its rural neighbors.
 
 <a name="france"></a>
-
-## France in the 19th century
+<h2><a href="france.pdf">France in the 19th century</a></h2>
 
 * France has relatively good census data, allowing us to calculate sex-ratios on the _département_ level.
-* Paris shows an SR1 consistenly lower than that of either rural _départements_ or smaller cities like Marseilles and Lyon.
+* Paris shows an SR1 consistently lower than that of either rural _départements_ or smaller cities like Marseilles and Lyon.
+* The finding corroborate the existing consensus of a substantial rural health advantage in 19th century France.
+* The country-wide SR1 declines from 1880-1900, in conflict with previous findings that this was a period of improvements in living standards.
 
-
-For examples of applications of the SR1 to census data from the 19th and 20th century, click [here](cases.html) and see work in progress.
 
 <a name="missing"></a>
 
-# The SR1 and Missing Girls
+<h2><a href="sex_discr.pdf">The SR1 and Missing Girls</a></h2>
 
-Given the historical availability of the population sex-ratios, a natural question would be whether the SR1 might also shed light on the question of missing women. As stated above, a low SR1 is unambiguous and implies poor maternal-infant conditions. A high SR1, e.g. 105, on the other hand, might be caused by good maternal-infant conditions, or by female infanticide and neglect. Looking only at the SR1, these two effects cannot be disentangled. However, by comparing across age groups, we may be able to detect excess female mortality. See [here](sex_discr.html) for a treatment of the SR1 and missing girls.
+Given the historical availability of the population sex-ratios, a natural question would be whether the SR1 might also shed light on the question of missing women. As stated above, a low SR1 is unambiguous and implies poor maternal-infant conditions. A high SR1, e.g. 105, on the other hand, might be caused by good maternal-infant conditions, or by female infanticide and neglect. Looking only at the SR1, these two effects cannot be disentangled. However, by comparing across age groups, we may be able to detect excess female mortality. Comparing census data from 19th century Europe and India, we find that sex-discrimination is obvious from the comparison of infant and child sex-ratios in India. In Europe, on the other hand, we find no evidence of mortal misogyny.
 
+# Invitation to Collaboration
+
+This is an open-source research project. We encourage fellow scholars who apply the infant sex-ratio to their study of living standards to send us links to their work. We will curate a list of such links in order to facilitate the dissemination of findings. Anyone interested in contributing to this list should email [Jesse McDevitt-Irwin](jrm2275@columbia.edu).
 
 <a name="references"></a>
 

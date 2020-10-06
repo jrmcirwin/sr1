@@ -1,5 +1,5 @@
 ---
-title: "Age Heaping and measured Sex Ratios among infants and young children"
+title: "Age Heaping and measured Sex Ratios among infants and young children[^1]"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
@@ -30,4 +30,8 @@ Absent a recent catastrophe, the number of infants (less than one-year old) in a
 We have access to the full-count census data for New York at the level of individual enumeration district, which enables us to better identify the role of selective age-heaping in these data. Districts with more one-year-olds than infants are deemed to have age-heaping (of infants into the one-year age-group). Within the age-heaping districts, the age-one sex-ratio was a whopping 106.3, which was substantially above the infant sex-ratio's 102.1 value.  Thus looking at the enumeration-district level of data points to the need to look at sex-ratio values across adjacent ages. To the extent that 11-month-old boys tended to be enumerated as one-year olds, the infant sex-ratio will be biased down and the one-year sex ratio will be biased up, with the opposing biases of similar magnitudes. But aggregating the infant and age-one counts will eliminate that source of bias (while adding other sorts of error?)
   
 NOTE: As a check, we restrict attention to enumeration districts with at least 70 infants, eliminating very small counts in which random variation in the SR1 could obscure patterns of interest. Restricting attention to those districts at least 70 infants, within the age-heaping districts the age-one sex-ratio was 106.7 and the infant sex-ratio was just 102.1. So we get the same basic result whether or not we restrict attention to districts with at least 70 infants.
+
+[^1]: A part of “Infant Sex-Ratios and Maternal-Infant Health,” Jesse McDevitt-Irwin & James R. Irwin; Sept. 2020
+
+
 

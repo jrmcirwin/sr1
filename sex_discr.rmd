@@ -1,31 +1,25 @@
 ---
-title: "Sex-ratios and Missing Girls"
-author: "Jim Irwin and Jesse McDevitt-Irwin"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+title: "Sex-Ratios, Maternal-Infant Health, and Missing Girls[^1]"
 bibliography: ["/home/friend/Research/Bib/bib.bib"]
 biblio-style: "apalike"
 nocite: | 
- [@dopicoRegionalMortalityTables1987] [@tapiaWhereAreMissing2017] [@senMore100Million1990]
+ [@dopicoRegionalMortalityTables1987] [@tapiaWhereAreMissing2017] [@senMore100Million1990] [@tabutinSurmortaliteFeminineEurope1978]
 ---
-```{r}
+```{r, include=FALSE}
 library(tidyverse)
 ```
 
-Given the historical availability of the population sex-ratios, the SR1 might also be able shed light on the question of missing girls.[^1] As explained [here](biology.rmd), a low SR1 is unambiguous and implies poor maternal-infant conditions. Similarly, a high SR1 implies sex-discrimination against girls. A biologically normal SR1, e.g. 105, on the other hand, might be caused by good maternal-infant conditions, or by female infanticide and neglect.
+Given the historical availability of the population sex-ratios, the SR1 might also be able shed light on the question of missing girls.[^2] As explained [here](biology.pdf), a low SR1 is unambiguous and implies poor maternal-infant conditions. Similarly, a high SR1 implies sex-discrimination against girls. A biologically normal SR1, e.g. 105, on the other hand, might be caused by good maternal-infant conditions, or by female infanticide and neglect.
 
 As an illustration, consider the 2017 article in Explorations in Economic History by Tapia and Gallego-Martinez, in which the authors claim to find evidence of sex discrimination in 19th century Spain using childhood sex-ratios. The authors argue that Spain's SR1 of 104.4 in 1860 is well above that which "in the absence of gender discrimination should have been expected." Their argument is twofold. One, the estimated infant mortality rate in Spain in 1860 was 245 per 1000 live births. Combined with a standard sex-ratio of mortality, such great infant mortality should have caused the SR1 to be 2.1 points below the SRB. Two, given the poor living conditions in Spain at the time, we would expect the SRB to be below the biological norm of 106. Using life-expectancy as a proxy for well-being, the authors borrow an elasticity of SRB with respect to life-expectancy which predicts that Spain in 1860 should have had an SRB of 102. Thus, the "expected" SR1 of Spain in 1860, based on life-expectancy and infant mortality, is 99.4 according to the authors.
 
-Though both arguments are reasonable, they rely to a great degree on extrapolation from limited data. The relationship between the SRB and life-expectancy is estimated on data from 1984-1999, a period in which cross-country differences in life-expectancy are mainly driven by adult well-being, rather than infant mortality, which had historically had the largest effect. Given that the SRB responds to the well-being of adult females, we would expect much greater elasticity of the SRB with respect to life-expectancy in the 1984-1999 period than in 1860.
+Though both arguments are reasonable, they rely on extrapolation from limited data. Moreover, as noted by Tapia and Gallego-Martinez, "direct evidence of female infanticide or the mortal neglect of young girls is almost absent in the Iberian Peninsula." Why then should a relatively low sex-ratio of 104.4 be considered evidence for missing girls? Why not, instead, might 19th century Spain simply have been healthier than previously believed?
 
-The infant mortality figures come from Dopico (1987), who uses the 19th century baptismal record. At least in this author's reading, the infant mortality rate calculated from these records is 186 per 1000 births. Due to concerns of under-reporting of births and deaths, Dopico estimates the infant mortality using modern demographic life-tables. 
+In fact, as can be seen in our own research,[^3] the Spanish sex-ratio hardly looks out of place when compared to it's _rural_ European contemporaries. In rural France in the mid-19th century was 104, very similar to that of Spain. In Ireland, another poor, rural society, the SR1 in 1841 was 104.5. In 1851 Scotland, the SR1 was 103.7. The common link between these societies is that they were mostly rural. In comparison, the much more urbanized England and Wales had an SR1 of 100.7, and the SR1 in Paris was less 100 for most censuses between 1851-1901.
 
-As noted by Tapia and Gallego-Martinez, "direct evidence of female infanticide or the mortal neglect of young girls is almost absent in the Iberian Peninsula." Why then should a relatively low sex-ratio of 104.4 be considered evidence for missing girls? Why not, instead, might 19th century Spain simply have been healthier than previously believed?
+If we are to look for missing girls, a far more telling piece of evidence for sex-discrimination comes from the comparison of the SR1 with the sex-ratio later in childhood (e.g. the sex ratio of children aged 5-9 (SR5-9)). As girls are naturally hardier than boys, in the absence of sex-discrimination the SR1 should be greater than the SR5-9.[^4] If the SR1 is less than the SR5-9, this is clear evidence of sex-discrimination. Consider the following sex-ratios, taken from various countries in Europe and regions of British India from 1880-1891. We add the Spanish value for 1860 which from Tapia and Gallego-Matinez (2017).
 
-Although Spain was poor, it might have been a relatively low-stress environment for mothers in a traditional, rural environment. In fact, as can be seen in our own research [here](cases.html), the Spanish sex-ratio hardly looks out of place when compared to it's _rural_ European contemporaries. In rural France in the mid-19th century was 104, very similar to that of Spain. In Ireland, another poor, rural society, the SR1 in 1841 was 104.5. In 1851 Scotland, the SR1 was 103.7. The common link between these societies is that they were mostly rural. In comparison, the much more urbanized England and Wales had an SR1 of 100.7, and the SR1 in Paris was less 100 for most censuses between 1851-1901.
-
-If we are to look for missing girls, a far more telling piece of evidence for sex-discrimination comes from the comparison of the SR1 with the sex-ratio later in childhood (e.g. the sex ratio of children aged 5-9 (SR5-9)). As girls are naturally hardier than boys, in the absence of sex-discrimination the SR1 should be greater than the SR5-9.[^2] If the SR1 is less than the SR5-9, this is clear evidence of sex-discrimination. Consider the following sex-ratios, taken from various countries in Europe and regions of British India from 1880-1891. We add the Spanish value for 1860 which from Tapia and Gallego-Matinez (2017).
-
-```{r}
+```{r, echo=FALSE}
 x<- c( "India","Bengal","Madras","Bombay","Sindh","Punjab","England and Wales","Scotland","Ireland","Italy","Sweden","Austria", "Spain (1860)") %>%
   cbind(c(1020,1055,1048,1016,932,971,998,962,952,956,975,1001,1000000/1044)) %>% 
   cbind(c(936,951,990,942,815,845,1006,976,977,966,978,1004,1000000/1025))%>%
@@ -41,10 +35,17 @@ knitr::kable(digits = 1, caption = "The sex ratio of infants aged 0-1, and of ch
 
 Here we see that for every European country the SR5-9 is less than the SR1, as expected in the absence of sex-discrimination. In every region of British India, the reverse is true. This is direct evidence of female infanticide and neglect in British India. This is despite the fact that the SR1 is *generally lower* in the regions of India than in Europe, most likely due to poor living conditions and health. Thus, by comparing the sex-ratio across ages, we can begin to make inferences about not only the health of the population, but also the extent of sex-discrimination.
 
-If we apply the same method to 19th century Spain, we see that the relatively high SR1 of 104.5 falls to 102.5 at ages 6-10. We see that boys are dying more than girls, as expected in the absence of sex discrimination. There may still have been female infanticide and neglect in 18th century Spain, but any such sex-discrimination failed to outweigh the natural survival advantage which girls have over boys. One might claim that the sex-discrimination was only taking place below the age of one, but this seems implausible. Thus, while we can reject the null hypothesis that there was no sex-discrimination in British India, we fail to reject this hypothesis in Spain and the rest of Europe. Note that the test for sex-discrimination, like that for poor living conditions is *one-sided*, and that we cannot show it's absence, only it's presence. There certainly could have been sex-discrimination in 19th century Spain, but its effect was smaller than the natural survival advantage of girls over boys.
+If we apply the same method to 19th century Spain, we see that the relatively high SR1 of 104.5 falls to 102.5 at ages 6-10. We see that boys are dying more than girls, as expected in the absence of sex discrimination. There may still have been female infanticide and neglect in 19th century Spain, but any such sex-discrimination failed to outweigh the natural survival advantage which girls have over boys. One might claim that the sex-discrimination was only taking place below the age of one, but this seems implausible. Thus, while we can reject the null hypothesis that there was no sex-discrimination in British India, we fail to reject this hypothesis in Spain and the rest of Europe. Note that the test for sex-discrimination, like that for poor living conditions is *one-sided*, and that we cannot show it's absence, only it's presence. There certainly could have been sex-discrimination in 19th century Spain,[^5] but its effect appears to have been smaller than the natural survival advantage of girls over boys.
 
 # References
 
-[^1]: For the original work on "missing women" see Sen 1990.
+[^1]: A part of “Infant Sex-Ratios and Maternal-Infant Health,” Jesse McDevitt-Irwin & James R. Irwin; Sept. 2020
 
-[^2]: This analysis relies on the assumption that age groups within a census may be treated as a synthetic cohort. An ideal method would track cohorts across time.
+[^2]: For the original work on "missing women" see Sen 1990.
+
+[^3]: See our work on [France](france.pdf), [Britain](britain.pdf) and [Ireland](ireland.pdf)
+
+[^4]: This analysis relies on the assumption that age groups within a census may be treated as a synthetic cohort. An ideal method would track cohorts across time.
+
+
+[^5]: Tabutin (1978) finds that there was excess female mortality in France during the period, but mainly in late-childhood, rather than infancy.
