@@ -1,0 +1,194 @@
+---
+title: "Infant Sex Ratios in England, Scotland, and Ireland in the Nineteenth Century[^1]"  
+author: "Jesse McDevitt-Irwin and James R. Irwin"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+bibliography: ["/home/friend/github/sr1/files/GB-IRE.bib"]
+biblio-style: "apalike"
+output: pdf_document
+nocite: | 
+  [@mokyrPoorGettingPoorer1988] [@hobsbawmBritishStandardLiving1957] [@griffinDietsHungerLiving2018] [@clarkConditionWorkingClass2005] [@allenEngelsPauseTechnical2009] [@webbLabourLongestReign1897] [@engelsConditionWorkingClassEngland1892] [@mokyrWhyIrelandStarved1983][@mokyrHeightHealthUnited1996][@mokyrThereStillLife1988][@mokyrHeightsBritishIrish1994][@nicholasLivingStandardsWomen1993][@nicholasLivingStandardsWomen1993][@bodenhornSampleselectionBiasesIndustrialization2017][@boyleFertilityTrendsExcess1986][@cinnirellaOptimistsPessimistsReconsideration2008][@davenportUrbanizationMortalityBritain2020][@engermanSlaveryFreedomSen2003][@engermanReflectionsStandardLiving1994][@feinsteinPessimismPerpetuatedReal1998][@floudHeightHealthHistory1990][@hartwellRisingStandardLiving1961][@huckInfantMortalityLiving1995][@johnsonMaleFemaleLiving1995][@kennedyIrishEmigrationMarriage1973] [@kirbyStandardLivingDebate1997] [@komlosSecularTrendBiological1993] [@boltMaddisonProjectDatabase2018][@mclaughlinIrishRevolutionIts2017][@mitchellInternationalHistoricalStatistics1998][@nicholasLivingStandardsWomen1993][@ogradaHeightsClonmelPrisoners1991][@ogradaIrelandFamineExplorations1993][@ogradaIrelandGreatFamine2007][@oxleyLivingStandardsWomen2004][@scheper-hughesChildSurvivalAnthropological1987][@scheper-hughesSaintsScholarsSchizophrenics2001] [@thomasMillenniumUKData2017] [@webbLabourLongestReign1897]
+---
+
+
+
+# Infant Sex Ratios and the Standard of Living Debate
+
+Infant sex ratios offer a new empirical perspective on the famous Standard of Living debate. The related literature is voluminous, so we note only some key points.[^2] First, attention and debate has narrowed to the period *circa* 1815 to 1850. That timing reflects a rough consensus that wars and inflation confound efforts to identify industrialization's earlier effects (e.g. Mokyr 1988:70), and that the second half of the 19^th^ century saw substantial and widespread improvements in living conditions (e.g. Hobsbawm 1957:47). Second, research over the past 30 years has produced something approaching a consensus, which we describe as a moderate pessimist view (following Mokyr's (1988) lead).[^3] Griffin (2018:108) offers a useful summary statement: "working people saw little to no gains in their incomes and experienced losses in terms of their working patterns, health and welfare."[^4]
+
+Debate continues over the course of real wages and family incomes before 1850. Some argue for substantial real wage gains from the 1770s (or later) to the 1840s, especially for adult men and non-agricultural workers, which could inform an optimist view (e.g. Clark 2005:1318).[^5] But others find limited income growth for most Britons (e.g. Allen 2009), and various other results point toward more of a pessimist view. Most notably, scholars focus on evidence of declining average heights (among men and women) to argue for deterioration in health, nutrition, and other dimensions of living standards.[^6]
+
+The dominant view from recent research falls short of a "classical view" of England's early industrialism as a "catastrophe for the working poor" (Hobsbawm 1957:46). That early tradition articulated a very "strong pessimist" position, which saw the early stages of England's industrial revolution exacting a terrible human toll.[^7] For example, Webb (1897) saw the start of the Victorian era (1837) as "the trough of a century's decline in all that make's life worth living". And Engels (1892) offered a wide range of graphic examples illustrative of his view that industrialization and urbanization immiserized the British working class.[^8]
+
+The 1841 British census is the first to provide counts of infants by sex, and there we find an under-two sex ratio of just 98.0 for England and Wales. The infant sex-ratio evidence re-directs attention to the older, harshly pessimist views of the 'conditions of life' in the first half of the 19^th^ century. England's infant sex ratio (SR2) in 1841 was just 97.8, a level suggesting miserable maternal and infant conditions of life(see Table Br-Ir.1).[^9] Wales's SR2 value of 100.2 is indicative of somewhat better conditions \-- presumably reflecting a lower degree of industrialization and urbanization. Within England, the sprawling metropolis of London featured one of the lowest infant sex ratio we have encountered in a sizable population \-- an SR2 of just 95.5. To some extent, the low English sex-ratio values reflected a depressed sex ratio at birth, an outcome from pregnancies characterized by poor nutrition, overwork, stress, and disease. And to some extent, the low SR2 would have reflected the relatively higher mortality of boys versus girls, in the context of a regime of fairly high infant mortality \-- perhaps 154 per thousand in 1840 (Mitchell 1998:120). Further research should clarify the mix and sources of maternal and infant misery.
+
+Table Br-Ir.1: Infant Sex Ratios in Britain & Ireland in 1841                                                                                                                
+
+|               |             |              |               |               |
+| ------------- | ----------- | ------------ | ------------- | ------------- |
+|               | England     | Wales        | Scotland      | Ireland       |
+|               |             |              |               |               |
+| SR2 (under 2) | 97.8        | 100.2        | 102.6         | 104.3         |
+| 90% CI        | 97.5 - 98.2 | 98.7 - 101.7 | 101.6 - 103.5 | 103.7 - 104.9 |
+|               |             |              |               |               |
+| SR5 (under 5) | 98.6        | 100.7        | 102.8         | 103.5         |
+| 90% CI        | 98.4 - 98.8 | 99.7 - 101.6 | 102.3 - 103.4 | 103.2 - 103.9 |
+|               |             |              |               |               |
+| SR1           | 95.7        | 97.6         | 101.2         | 104.5         |
+| SR1-2         | 100.0       | 102.9        | 104.0         | 104.0         |
+
+
+Sources: published Census Reports, from [Online Historical Population Reports](http://www.histpop.org/ohpr/servlet/). Notes: We focus on the SR2 because of male-biased age-heaping toward age one in England and Scotland. The bias is evident in a comparison of the age-1 sex ratio (SR1-2) to the under-one sex ratio (SR1), which are both reported here. Note the Irish data do not exhibit the problem. 90% CI is the implied 90% confidence interval for the sex-ratio value, modelling the count of males as a binomial (with mean p and SR=(p/(1-p)).  
+
+The low level of England's sex ratio in 1841 is noteworthy in comparison to modern healthy populations, with SR2 values on the order of 105, but the neighboring nations of Scotland and Ireland are arguably a more useful reference. And in those neighbors we see dramatically higher sex-ratio values than in England. Ireland's SR2 of 104.3 in 1841 stands out \-- over 7 percentage-points above England's \-- but Scotland's 102.6 SR2 value also serves to suggest that England's early lead in industrialization came at a heavy cost to the English people. Interestingly, the SR2 gradient across the three countries runs opposite to the urban-industrial development gradient. Whatever the precise mechanisms underlying England's very low infant sex-ratio value in 1841, the contrast to neighbouring Scotland and Ireland is fascinating. We conjecture that their lag in terms of economic development and urbanization meant that mid-nineteenth-century Scotland and Ireland escaped the deleterious living conditions that afflicted the mothers and infants of industrializing England.
+
+## Postscript: England, Scotland, and Ireland across the later 19^th^ century
+
+The infant sex-ratio evidence suggests a modest improvement in maternal-infant well-being in England and Wales in the three decadal censuses after 1841, with the SR2 increasing by over 2.5 percentage points to reach values at or close to 101 (see Table Br-Ir.2). But then the next three censuses (1881 thorugh 1901) saw lower SR2 values, of about 100. It was not until the 20^th^ century that the infant sex ratio in England climbed past 102 and 103, suggesting that substantial improvements in maternal and infant health came a half-century after the oft-heralded improvements in real wages (after circa 1850).
+
+Of course the big questions remain to be answered, most notably, to what extent were people choosing to leave behind healthy and poor rural living conditions in favor of opportunities for higher incomes and new ways of life in the cities; and to what extent were such choices voluntary and informed (did they know the risks to mothers and children?).[^10]
+
+Table Br-Ir.2 Sex Ratios (SR2) across the later 19^th^ century                                                       
+
+|      | Eng & Wales | Scotland | Ireland |
+| ---- | ----------- | -------- | ------- |
+| 1841 | 98.0        | 102.6    | 104.3   |
+| 1851 | 100.6       | 103.8    | 104.4   |
+| 1861 | 100.7       | 103.5    | 103.7   |
+| 1871 | 101.0       | 102.6    | 102.5   |
+| 1881 | 99.9        | 102.7    | 104.4   |
+| 1891 | 100.2       | 103.1    | 104.5   |
+| 1901 | 100.3       | 102.1    | 104.0   |
+| 1911 | 101.8       | 101.6    | 102.7   |
+| 1921 | 103.5       | 102.3    | na      |
+
+
+Sources: published Census Reports, from [Online Historical Population Reports](http://www.histpop.org/ohpr/servlet/). We focus on the SR2 because in many case we see male-biased age-heaping at age 1 (e.g. England 1841; Scotland 1841, 1871, 1881; Ireland 1851, 1861, 1871, 1881, 1891).                            
+
+Table Br-Ir.3 Infant Sex Ratios (SR1)
+into the 20th century
+
+|      | Eng & Wales | Scotland |
+| ---- | ----------- | -------- |
+| 1891 | 100.8       | 103.4    |
+| 1901 | 100.6       | 102.4    |
+| 1911 | 102.2       | 101.8    |
+| 1921 | 103.5       | 102.3    |
+| 1931 | 102.8       | 102.4    |
+| 1981 | 104.8       | 106.0    |
+
+Sources: 1891-1931 published Census Reports, from [Online Historical Population Reports](http://www.histpop.org/ohpr/servlet/). 1981: The National Archives (UK), [Historic Mortality: 1901-1992 dataset](https://discovery.nationalarchives.gov.uk/details/r/C11521415); National Records of Scotland, [Population Pyramids](https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/population/population-projections/population-projections-scotland/population-pyramids-of-scotland).
+
+# Prefamine Ireland
+
+**Abstract.** Research on prefamine Ireland offers an intriguing mix of evidence on living conditions, with economic indicators suggesting a pessimistic view of incomes and consumption (e.g. Mokyr 1983), but evidence on heights suggesting a more sanguine view (e.g. Mokyr and Ó Gráda 1988, 1994, 1996; Nicholas & Steckel 1997). Infant sex ratios provide support for optimistic views of prefamine Ireland. The 1841 census data yield an infant sex-ratio of 104.5 for Ireland, consistent with views of the prefamine Irish as a robust and healthy preindustrial population.[^11] A regional breakdown suggests that good health was independent of the level of economic development (or industrialization).
+
+
+Historical research on Ireland on the eve of the Great Famine paints an intriguing picture of a population that was poor but healthy, based on a mix of conflicting evidence on general living conditions.[^12] Pessimistic views start with a focus on mass poverty in prefamine Ireland.[^13] Production and income estimates certainly suggest a very poor society, compared to England and northwest Europe more generally. Current estimates put Ireland's per capita GDP in the early 1840's at just 1/3 of England's and 1/2 of France's. So low a level is not seen for England after the sixteenth century (and is seen only three times in the period 1350 to 1600).[^14] The GDP evidence is certainly suggestive of relatively limited consumption opportunities in Ireland.[^15] And some demographic evidence also points to a pessimistic view of prefamine living conditions. Contemporary life-tables placed Irish life expectancy at just under 30 years compared to over 41 years for the English.[^16] And more recently, Mokyr (1983:38) estimated Irish infant mortality in 1840 to be 22.4 percent, at least one and half seven percentage points above contemporary England's (Mitchell 1998:120).[^17]
+
+However, other demographic evidence suggests a less pessimistic view, with only a small advantage to England in terms of life expectancies and infant mortality.[^18] And of more importance, there is evidence to support an optimistic view of prefamine Irish living conditions. First, a wide range of non-quantitative evidence suggests the Irish peasantry were "healthy vigourous, and robust" (Mokyr 1983:6-9).[^19] Second, research on heights among Irish and British populations finds the Irish taller than the English, but shorter than the Scots, in the half-century before the Famine.[^20] Although some have challenged the use of average heights as a measure of living standards (Bodenhorn, Guinnane, and Mroz (2017), the evidence on Irish heights is consistent with more optimistic appraisals of the health of the Irish on the eve of the famine.
+
+Turning to infant sex ratios in prefamine Ireland, reveals evidence for the optimistic view of Irish living conditions circa 1841 (see Table IRE1841.1), and offers nothing for a pessimistic view. With a value of 104.5 from the 1841 census, Ireland's infant sex ratio is typical of healthy, well-nourished maternal and infant populations in the nineteenth century. And the modestly lower SR5 value of 103.4 provides some assurance that the infant sex-ratio was not unnaturally boosted by mortal discrimination against infant girls.[^21]
+
+
+Table IRE1841.1: Irish Infant & Child Sex Ratios in 1841 Ireland                                                      
+
+|         | SR1   | SR1-2 | SR5   |
+| ------- | ----- | ----- | ----- |
+| Ireland | 104.5 | 104.0 | 103.4 |
+
+Source: Report of the Commissioners \... Census of Ireland 1841. SR1-2 refers to the sex ratio for one-year-olds. SR5 refers to the sex ratio for children under 5 years of age.                   
+
+
+Turning to provincial breakdowns of the sex ratio evidence undermines another pessimistic perspective on Ireland in 1841, one which associates early economic "development" with health and well-being. As Oxley (2004:73) succintly explained, Ireland was characterized by a "development gradient \... by famine\'s eve, Ulster was the most developed, followed by Leinster and then Munster, while Connaught was the poorest." Oxley points out that mortality in the Famine was "exactly the inverse" of the development gradient, which she interprets as evidence of a causal link from prefamine poverty to Famine mortality. The regional breakdown of the infant sex ratio provides some support for the hypothesized relationship between living conditions and development, as the Province of Ulster had the most favorable infant sex-ratio value, at 105.6. However, all four provinces had quite favorable infant sex ratios \-- values of about 104, which are not suggestive of widespread destitution or hardship. We can agree with Oxley that development served to bolster an area's "resistance to blight-induced food shortages"; but we suggest the mechanism was simply that a more diversified economy was less vulnerable to failures of the potato crop.
+
+Table IRE1841.2 Infant Sex Ratios by Province in 1841   
+
+|          |             |             |             |             |
+| -------- | ----------- | ----------- | ----------- | ----------- |
+| Province | Ulster      | Leinster    | Munster     | Connaught   |
+| SR1      | 105.6       | 103.8       | 104.4       | 103.9       |
+|          |             |             |             |             |
+| 90% C.I. | 104.2-107.1 | 102.2-105.4 | 103.1-105.8 | 102.2-105.7 |
+|          |             |             |             |             |
+Source: Report of the Commissioners \... Census of Ireland 1841.   
+
+
+## Postscript \-- Sex Ratios in 19th-century Ireland, Postfamine.
+
+Infant sex ratios from the decennial censuses (1851 to 1901) are mostly suggestive of good living conditions, with SR2 values usually around 104. The year 1871 offers one small exception to the general pattern, with a value of 102.5 for the SR2 \-- about one and one-half percentage points lower than in the other censuses. That somewhat lower value of the SR2 for 1871 could be indicative of some challenges to maternal or infant health; more research is needed here.
+
+**The Under-2 Sex Ratio in Ireland, Postfamine Census Benchmarks**    
+
+|          |       |       |       |       |       |       |
+| -------- | ----- | ----- | ----- | ----- | ----- | ----- |
+| **year** | 1851  | 1861  | 1871  | 1881  | 1891  | 1901  |
+| **SR2**  | 104.4 | 103.7 | 102.5 | 104.4 | 104.5 | 104.0 |
+|          |       |       |       |       |       |       |
+Sources: Census of Ireland, published volumes from [Histpop](http://www.histpop.org/ohpr/servlet/Show?page=Home).    
+
+\pagebreak                                            
+
+*Detailed listing of British & Irish census sources (in progress).*
+
+Census of Great Britain, 1841, Abstract of the answers and returns \... Age Abstract. Part I. England and Wales and Islands in the British Seas, Part II. Scotland. London, 1843.
+
+Census of Great Britain, 1851, Population Tables II, Ages, Civil Condition, \... Vol 1. London, 1854.
+
+Census of England and Wales for the year 1861, Population Tables. Ages, Civil Condition, \... London, 1863.
+
+Census of England and Wales for the year 1871, General Report. Vol. IV. London, 1873.
+
+Census of England and Wales. 1881. Volume III. Ages, Condition as to Marriage, \... London, 1883.
+
+Ireland Census Office, Report of the Commissioners \... census of Ireland for the year 1841.
+
+
+# References
+
+
+[^1]: A part of "Infant Sex-Ratios and Maternal-Infant Health," Jesse McDevitt-Irwin & James R. Irwin.
+
+[^2]: For an introduction to the debate, among many possible, see Hobsbawm (1957), Hartwell (1961), Mokyr (1988) Engerman (1994), Kirby (1997) and Griffin (2018).
+
+[^3]: Our wording builds on Mokyr (1988). Writing when optimist views were in ascendance, Mokyr (1988:69) offered a distinction between "strong pessimists" and "weak pessimists." The former argued for an actual decline in living standards before 1850; the latter saw no or little improvement in living standards in that period. And both were opposed by optimists, who saw important improvements in living standards in the period.
+
+[^4]: Griffin offers a highly critical discussion of prevailing views, moving away from the pessimist/optimist dichotomy.
+
+[^5]: See Clark (2005, 2001) for strong wage growth before mid-century; and see Feinstein (1998) for slow wage growth, and Allen (2009) for stagnant real wages.
+
+[^6]: Floud, Wachter, Gregory (1990), Komlos (1993), Johnson & Nicholas (1995), Cinnerella (2008). See also Huck (1995) for evidence of rising infant mortality in industrial areas from 1813 to 1836.
+
+[^7]: See Kirby (1997) for a useful summary, referring to Dickens (1854), Gaskell (1855), Disreali (1845), Engels (1845), and various commissions and reports. Hobsbawm (1957:46) refers to "the consensus of informed and intelligent contemporaries, a majority of whom, as even critics admit, took the dark view." That point is challenged by Hartwell (1961:398), for "ignoring Tooke, Porter, Macaulay, etc.".
+
+[^8]: For example, consider a quote which Engels takes from the _London Times_: "But  let  all  men  remember  this  – that  within  the  most  courtly  precincts  of  the  richest  city  of  God’s  earth,  there  may  be  found,  night after night, winter after winter, women –   young in years –   old in  sin  and  suffering  – outcasts  from  society  – ROTTING  FROM  FAMINE,  FILTH,  AND  DISEASE."
+
+[^9]: We report under-age-two sex ratios to sidestep male-biased age-heaping at age one in the 1841 British census (see Table ENG-1841).
+
+[^10]: Similarly, one wonders about the comparative
+
+[^11]: Recall that the SR1 is a one-sided test for maternal and infant misery, and it is possible for female-biased infanticide or neglect to produce a healthy-looking SR1 in an unhealthy population. That possibility seems unlikely of prefamine Ireland, because the under-5 sex ratio was somewhat lower than the SR1 (103.4 vs 104.5). With mortal misogyny, we expect to see sex ratios increasing with age (the opposite of the biological tendency). Kennedy (1973) argues for excess female mortality in nineteenth-century Ireland, which he links to the subordination of women and girls. But Kennedy's discussion does not suggest excess female infant mortality. See also Scheper-Hughes (1987:11; 2001:236) on Ireland until the mid-nineteenth century: "Deformed, mentally handicapped, or sickly were sometimes viewed as 'changelings' rather than as human infants, and \... such babies were abandoned, tortured, or burned by their parents" 2001:236). Such practices seem likely to reduce the SR1 (not to inflate it), because on biological grounds, we would expect more male than female infants to be seen as "changelings" (even if son-preference would incline some parents otherwise).
+
+[^12]: Although it may be tempting to view the Irish Famine as some simple Malthusian crisis, research starting with Mokyr (1983) has pushed aside notions of \'overpopulation,\' demonstrating that prefamine Ireland was not hovering on the brink of starvation. Ó Gráda (1993:6) does offer the Malthusian claim that "increasing population undoubtedly produced greater mass poverty." But his next line is "Yet the link between impoverishment and subsistence crises is not so clear cut."
+
+[^13]: Among many possible, see e.g. Mokyr (1983:1): "most of the people who lived in Ireland in this period were poor, poorer than in comparable economies in Europe"; or Ó Gráda (1993:40), on the "miserable and worsening lot of the bottom third or half of the population."
+
+[^14]: These comparisons draw on the per capita GDP estimates for Ireland and England from Thomas and Dimsdale (2017), \"A Millennium of UK Data\", Bank of England OBRA dataset, and the estimates for France and England from the Maddison Project Database 2018. Based on Thomas and Dimsdale\'s spreadsheets, Irish per capita GDP in the early 1840s was about £ 900 (2013 prices); values of English per capita GDP below £ 900 occur only 3 times after the year 1350 in their series (in 1375, 1556, and 1597); for the period 1350-1600, English per capita GDP averaged over £ 1,120. Ireland appeared less poor in earlier estimates of relative incomes. See e.g. Ó Gráda (2007), and references there; Ó Gráda (2007:45) suggested prefamine Irish per capita GDP was about 1/2 that in Britain. Mokyr's (1983:11) estimates of personal income per capita circa 1840 has Ireland at some 37% to 44% of England.
+
+[^15]: Relatively less inequality could have offset Ireland's income disadvantage, in terms of consumption levels of the non-elite. More importantly, as Mokyr (1983:7-8) emphasized, a "gigantic" index number problem looms in comparisons of Irish to English incomes, if the Irish simply enjoyed more leisure and larger families (perhaps at the cost of material incomes). On our reading, for Mokyr, the index number problem bears on the magnitude of the Irish-English income gap, but not its direction. In contrast, our sex-ratio evidence (below) raises questions about the direction of the gap, or about the relevance of national income values for standards of living in the nineteenth century. Such questions are also featured in historical research on comparative heights of Irish and British populations (see below).
+
+[^16]: Ireland Census 1841: lxxx; England, Registrar-General 1841: xvii, xix.
+
+[^17]: See also Mokyr and Ó Gráda (1988:229): \"Irish infant mortality rates were about 50 per cent higher than in Britain\". Infant mortality for England and Wales at mid-century was about 150-160 per thousand (e.g. Mitchell 1998:120-21; Davenport, 2020:460).
+
+[^18]: Boyle and Ó Gráda (1986:561) offer a more sanguine view of life expectancy in prefamine Ireland. Based on 1841 and 1821 census figures, they estimate life expectancies at birth of 38.4 for males and 38.3 for females. Those fall just a little short of British values; for example, Wrigley (2015:64) estimates 40.6 years for British life expectancy at birth in 1836. Other sources offer lower infant mortality estimates than Mokyr's. Boyle and Ó Gráda (1986:561) have Irish infant mortality in 1841 at 173/1000 for males and 135/1000 for females. Mitchell reports Irish infant mortality starting in the mid-1860s, when it was 98/1000, substantially below Englands rate of 160/1000 (1998:121-22); but a pessimist could argue the prefamine situation was much worse.
+
+[^19]: Mokyr offers a somewhat pessimistic perspective on the observed heartiness of Irish adults, suggesting (1983:8) a culling effect of high infant mortality: "High birth rates and high infant mortality rates tend to produce a residual adult population which is hardier and more resistant to disease". However, the results of McLaughlin, Colvin, and Blum (2017) cast doubt on a culling effect from prefamine infant mortality. They do find evidence of culling from famine mortality in areas hardest hit by the Famine; there, famine mortality was so selective that famine survivors tended to be relatively tall. But where famine mortality was not extreme, such as around Dublin, they find evidence of \"scarring\", with survivors from the famine period relatively short.
+
+[^20]: Mokyr and Ó Gráda 1988, 1994, 1996; Floud et al. 1990:200-6; Ó Gráda 1991; Nicholas and Oxley 1993; Nicholas and Steckel 1997; Oxley 2004.
+
+[^21]: Of course it is possible that female-biased infanticide or neglect produced a healthy-looking SR1 in an Irish population that was actually unhealthy, but the SR5 being lower than the SR1 suggests otherwise; with mortal misogny we expect to see sex ratios increasing with age (the opposite of the biological tendency). Kennedy (1973) argues for excess female mortality in nineteenth-century Ireland, which he links to the subordination of women and girls. But Kennedy's discussion does not suggest excess female infant mortality. See also Scheper-Hughes (1987:11; 2001:236), on Ireland until the mid-nineteenth century: "Deformed, mentally handicapped, or sickly were sometimes viewed as 'changelings' tather than as human infants, and \... such babies were abandoned, tortured, or burned by their parents" (2001:236). Such practices seem likely to reduce the SR1, because on biological grounds, we would expect more male than female infants to be seen as "changelings" (even if son-preference would incline some parents otherwise).
+
+  [Online Historical Population Reports]: http://www.histpop.org/
+  [Histpop]: http://www.histpop.org/ohpr/servlet/Show?page=Home
+  [Maddison Project Database 2018]: https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2018
+  [Bank of England OBRA dataset]: https://www.bankofengland.co.uk/statistics/research-datasets
