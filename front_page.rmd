@@ -26,6 +26,7 @@ load("~/Research/ssmm/un_sr1.Rdata")
 x <-long %>% 
 	group_by(Country) %>%  
 	summarise(CC=CC,sr1 = mean(sr1,na.rm = T), mort = mean(mort, na.rm=T)) %>%
+	filter(sr1<1.08) %>%
 	ggplot(aes(x=sr1,y=mort))+geom_point(aes(color =CC, label = Country))+geom_smooth(aes(),color="black")+ xlim(.975,1.10)+geom_vline(xintercept=1.055)+
 	labs(x= "SR1",y = "Infant Mortality (1000)",title = "Infant Mortality by SR1: 1953-1988")+scale_color_brewer(palette="Set1")
 plotly::ggplotly(x, tooltip="label")
