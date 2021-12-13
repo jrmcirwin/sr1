@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Sex Ratios and Infant Mortality</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jesse McDevitt-Irwin" />
+    <meta name="date" content="2021-12-13" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Sex Ratios and Infant Mortality
+### Jesse McDevitt-Irwin
+### 2021-12-13
+
+---
+
+
+
+
+
+---
+
+## Motivation
+
+Infant mortality (IMR) is greater for boys than girls.
+
+--
+
+Can we predict infant mortality from sex ratios?
+
+--
+
+
+
+Approach of this exercise:
+
+--
+
+  - Simulate a sex ratio at birth;
+  - Apply hypothetical infant mortality;
+  - Take sex ratio of survivors (SR1);
+  - Predict infant mortality from SR1.
+  
+---
+
+## Noise and Signal
+
+
+Concern:  sex ratios are noisy.
+--
+
+
+  - How big of a sample size do we need for useful information from sex ratios?
+--
+
+
+
+The answer depends on  _excess male mortality_ (EMM)---how much more often boys die than girls.
+--
+
+
+
+$$ EMM = \frac{q^{male}}{q^{female}}$$ where `\(q\)` is the infant mortality rate.
+
+---
+
+## Takeaways
+
+Sex ratios are noisy.
+--
+
+
+
+A 90% prediction interval of ~10 percentage points requires a sample size of:
+--
+
+  - 50,000 for EMM = 1.2;
+  - 500,000 for EMM = 1.1.
+  
+--
+
+
+
+Given that EMM is usually around 1.15-1.25, sex ratios should reveal _broad_ patterns of infant mortality for _large_ populations.
+
+---
+
+## Visualizing Sampling Variation
+
+The ratio of girls to boys can be modeled as the ratio of a binomial distribution:
+--
+
+`$$log(\frac{girls}{boys}) = log(\frac{p}{1-p})$$`
+
+where `\(p\)` is the probability of a live birth being a girl (typically around 48.5%)
+--
+
+
+
+The sampling variation of the sex ratio is therefore much larger than the variation in proportions.
+--
+
+
+
+In the interactive diagram which follows, you can choose your sample size and then see the distribution of sex ratios.
+--
+
+
+
+Observe that at `\(N=100\)` the distribution is so noisy that sex ratios with 20% more girls than boys are common.
+--
+
+
+
+Conclusion: sex ratios are not informative on small scales.
+
+---
+
+&lt;iframe src ="https://jrmcirwin.shinyapps.io/hist/" height=1000px width=1000px /&gt;
+
+
+---
+
+## Signal Strength
+
+The noise is determined by the sample size. What about the signal?
+--
+
+
+
+The signal between infant mortality and sex ratios is determined by the degree of _excess male mortality_ (EMM): the relative amount of male mortality to female mortality. 
+--
+
+
+EMM is expressed as the ratio of male infant mortality to female infant mortality. EMM ranges from 1.1-1.3 across different societies.
+--
+
+
+I take a fixed sex ratio of birth of 5% more boys than girls, apply infant mortality, and calculate the sex ratio of the survivors.
+
+---
+
+![](final_project_files/figure-html/tabsets-1.png)&lt;!-- --&gt;
+
+
+---
+
+## Combining Signal and Noise
+
+If we try to predict infant mortality from sex ratios, sampling variation in the sex ratio becomes uncertainty over the level of infant mortality.
+--
+
+
+The slope of infant mortality with respect to the sex ratio controls this uncertainty.
+--
+
+
+The weaker the signal from infant mortality to the sex ratio (&lt;span style="color: grey;"&gt;lower EMM&lt;/span&gt;), the greater the uncertainty in IMR generated from noise in the sex ratio.
+--
+
+
+This principle is visualized in the next slide. 
+--
+
+
+Fix a particular SR1, and then compare the range of reasonable IMRs when EMM is low vs when it is high. It is easier to predict IMR when EMM is high. 
+
+
+---
+
+&lt;iframe src ="https://jrmcirwin.shinyapps.io/combine/" height=1000px width=1000px /&gt;
+
+
+---
+
+## Prediction
+
+Statistically, my goal is to predict infant mortality from sex ratios.
+--
+
+
+I regress infant mortality on the sex ratio, separately by sample size and by EMM.
+--
+
+
+I then plot the 5th and 95th quantiles of the residual distribution across sample size, by EMM.
+
+---
+
+
+
+
+![](final_project_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+---
+## Prediction
+
+Infant mortality in the time period which I am interested in (1800-1950) was typically between 5% and 25%.
+--
+
+
+A prediction interval of ~10 percentage points would be sufficient for distinguishing broad patterns of infant mortality.
+--
+
+
+Below, I plot the range of the prediction interval (upper bound minus lower). 
+--
+
+
+For EMM of 1.2: 
+
+
+  - Sample size of 50,000 is sufficient for a 10-point prediction interval. 
+--
+
+
+For EMM of 1.1:
+
+
+  - Sample size of 500,000 is required.
+
+---
+
+![](final_project_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+---
+
+## Conclusions
+
+Sex ratios are potentially a useful indicator of infant mortality, but we need:
+
+ - A reasonably large sample.
+--
+
+
+Exactly how big this sample needs to be depends on the degree of excess male infant mortality (EMM).
+--
+
+
+Here is the approximate sample size needed to get a ~10 point IMR prediction interval for different levels of EMM:
+--
+
+  - EMM = 1.2, N = 50,000;
+  - EMM = 1.15, N = 100,000;
+  - EMM = 1.1, N = 500,000.
+
+--
+
+For reference, in 1880:
+--
+
+  - England had an infant population of ~800,000;
+  - Norway had one of ~50,000; and,
+  - Iceland had one of ~2,000.
+--
+---
+
+## Conclusions
+
+Takeaway: sex ratios are a promising indicator of infant mortality, but require sample sizes in the tens of thousands, or possible even more.
+--
+
+
+
+THE END. Thank you for reading!
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

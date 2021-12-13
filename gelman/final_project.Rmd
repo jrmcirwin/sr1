@@ -1,0 +1,305 @@
+---
+title: "Sex Ratios and Infant Mortality"
+subtitile: "Final Project for Communicating Statistics"
+author: "Jesse McDevitt-Irwin"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+rm(list = ls())
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,fig.height=8.5,dpi=300,
+                      fig.width = 11)
+library(shiny)
+library(tidyverse)
+library(mediocrethemes)
+set_mediocre_all()
+
+```
+
+---
+
+## Motivation
+
+Infant mortality (IMR) is greater for boys than girls.
+
+--
+
+Can we predict infant mortality from sex ratios?
+
+--
+
+
+
+Approach of this exercise:
+
+--
+
+  - Simulate a sex ratio at birth;
+  - Apply hypothetical infant mortality;
+  - Take sex ratio of survivors (SR1);
+  - Predict infant mortality from SR1.
+  
+---
+
+## Noise and Signal
+
+
+Concern:  sex ratios are noisy.
+--
+
+
+  - How big of a sample size do we need for useful information from sex ratios?
+--
+
+
+
+The answer depends on  _excess male mortality_ (EMM)---how much more often boys die than girls.
+--
+
+
+
+$$ EMM = \frac{q^{male}}{q^{female}}$$ where $q$ is the infant mortality rate.
+
+---
+
+## Takeaways
+
+Sex ratios are noisy.
+--
+
+
+
+A 90% prediction interval of ~10 percentage points requires a sample size of:
+--
+
+  - 50,000 for EMM = 1.2;
+  - 500,000 for EMM = 1.1.
+  
+--
+
+
+
+Given that EMM is usually around 1.15-1.25, sex ratios should reveal _broad_ patterns of infant mortality for _large_ populations.
+
+---
+
+## Visualizing Sampling Variation
+
+The ratio of girls to boys can be modeled as the ratio of a binomial distribution:
+--
+
+$$log(\frac{girls}{boys}) = log(\frac{p}{1-p})$$
+
+where $p$ is the probability of a live birth being a girl (typically around 48.5%)
+--
+
+
+
+The sampling variation of the sex ratio is therefore much larger than the variation in proportions.
+--
+
+
+
+In the interactive diagram which follows, you can choose your sample size and then see the distribution of sex ratios.
+--
+
+
+
+Observe that at $N=100$ the distribution is so noisy that sex ratios with 20% more girls than boys are common.
+--
+
+
+
+Conclusion: sex ratios are not informative on small scales.
+
+---
+
+<iframe src ="https://jrmcirwin.shinyapps.io/hist/" height=1000px width=1000px />
+
+
+---
+
+## Signal Strength
+
+The noise is determined by the sample size. What about the signal?
+--
+
+
+
+The signal between infant mortality and sex ratios is determined by the degree of _excess male mortality_ (EMM): the relative amount of male mortality to female mortality. 
+--
+
+
+EMM is expressed as the ratio of male infant mortality to female infant mortality. EMM ranges from 1.1-1.3 across different societies.
+--
+
+
+I take a fixed sex ratio of birth of 5% more boys than girls, apply infant mortality, and calculate the sex ratio of the survivors.
+
+---
+
+```{r tabsets, echo=FALSE}
+set_mediocre_all(base_size = 50)
+  params <- expand.grid(q = rep(seq(.001,.4,.05),100), gamma = c(1.1,1.18,1.25)) %>% 
+  mutate(sr = (log(.95)+log(1-q)-log(1-gamma*q)))
+
+  ggplot(params,aes(x=sr*100,y=q*100, color = gamma))+geom_line(aes(group=gamma),size = 1)+
+  labs(x = "log(girls/boys)",   y = "IMR (%)", title = "Infant Mortality by Sex Ratio at Age 1",
+       color = "Excess Male Mortality")
+```
+
+
+---
+
+## Combining Signal and Noise
+
+If we try to predict infant mortality from sex ratios, sampling variation in the sex ratio becomes uncertainty over the level of infant mortality.
+--
+
+
+The slope of infant mortality with respect to the sex ratio controls this uncertainty.
+--
+
+
+The weaker the signal from infant mortality to the sex ratio (<span style="color: grey;">lower EMM</span>), the greater the uncertainty in IMR generated from noise in the sex ratio.
+--
+
+
+This principle is visualized in the next slide. 
+--
+
+
+Fix a particular SR1, and then compare the range of reasonable IMRs when EMM is low vs when it is high. It is easier to predict IMR when EMM is high. 
+
+
+---
+
+<iframe src ="https://jrmcirwin.shinyapps.io/combine/" height=1000px width=1000px />
+
+
+---
+
+## Prediction
+
+Statistically, my goal is to predict infant mortality from sex ratios.
+--
+
+
+I regress infant mortality on the sex ratio, separately by sample size and by EMM.
+--
+
+
+I then plot the 5th and 95th quantiles of the residual distribution across sample size, by EMM.
+
+---
+
+```{r, include =FALSE}
+params <- expand.grid(q = rep(seq(.001,.3,.05),1000), gamma = c(1.1,1.18,1.25), N = c(1000,5000,10000, 1e5, 1e6,1e7,1e8))
+
+params <- params %>% 
+  mutate(girls = rbinom(size = N,n=nrow(params),prob = .487)) %>% 
+  mutate(srb = log(girls/(N-girls))) %>% 
+  mutate(sr1 = srb+log(1-q)-log(1-gamma*q)) 
+
+df_wide <- params %>% group_by(gamma,N) %>% 
+  do(broom::augment(lm(q~sr1,data = . ))) %>% group_by(gamma,N) %>% 
+  summarise(lower = quantile(.resid, .05),
+            upper = quantile(.resid, .95))
+df_long <- df_wide %>% 
+  pivot_longer(c(lower,upper), names_to = "type", values_to = "bound")
+
+```
+
+
+```{r}
+ggplot(df_long, aes(x=N,y=bound,color = gamma, group = paste0(type,gamma)))+geom_path(size = 1)+scale_x_log10()+
+  labs(title = "Prediction bounds by Sample Size and EMM", 
+       y = "90% Prediction Bounds", color = "EMM")
+
+```
+---
+## Prediction
+
+Infant mortality in the time period which I am interested in (1800-1950) was typically between 5% and 25%.
+--
+
+
+A prediction interval of ~10 percentage points would be sufficient for distinguishing broad patterns of infant mortality.
+--
+
+
+Below, I plot the range of the prediction interval (upper bound minus lower). 
+--
+
+
+For EMM of 1.2: 
+
+
+  - Sample size of 50,000 is sufficient for a 10-point prediction interval. 
+--
+
+
+For EMM of 1.1:
+
+
+  - Sample size of 500,000 is required.
+
+---
+
+```{r}
+df_wide %>% 
+ggplot(aes(x=N,y=upper-lower,color = gamma, group = gamma))+geom_path(size = 1)+scale_x_log10()+ylim(0,.27)+
+  labs(title = "Prediction Bounds by Sample Size and EMM", 
+       y = "90% Prediction Bound Magnitude (upper - lower)", color = "EMM")
+```
+
+---
+
+## Conclusions
+
+Sex ratios are potentially a useful indicator of infant mortality, but we need:
+
+ - A reasonably large sample.
+--
+
+
+Exactly how big this sample needs to be depends on the degree of excess male infant mortality (EMM).
+--
+
+
+Here is the approximate sample size needed to get a ~10 point IMR prediction interval for different levels of EMM:
+--
+
+  - EMM = 1.2, N = 50,000;
+  - EMM = 1.15, N = 100,000;
+  - EMM = 1.1, N = 500,000.
+
+--
+
+For reference, in 1880:
+--
+
+  - England had an infant population of ~800,000;
+  - Norway had one of ~50,000; and,
+  - Iceland had one of ~2,000.
+--
+---
+
+## Conclusions
+
+Takeaway: sex ratios are a promising indicator of infant mortality, but require sample sizes in the tens of thousands, or possible even more.
+--
+
+
+
+THE END. Thank you for reading!
+
+
